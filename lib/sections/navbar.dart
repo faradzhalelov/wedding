@@ -14,18 +14,16 @@ class NavItem {
 /// Sticky navbar. Full links on desktop, hamburger on mobile.
 /// Matches the frosted glass style from the HTML designs.
 class Navbar extends StatelessWidget {
-  const Navbar({
-    super.key,
-    required this.navItems,
-    required this.onRsvpTap,
-  });
+  const Navbar({super.key, required this.navItems, required this.onRsvpTap});
 
   final List<NavItem> navItems;
   final VoidCallback onRsvpTap;
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = screenSizeOf(context) == ScreenSize.mobile;
+    final screenSize = screenSizeOf(context);
+    final showMobileMenu =
+        screenSize == ScreenSize.mobile || screenSize == ScreenSize.tablet;
 
     return Container(
       decoration: BoxDecoration(
@@ -36,8 +34,10 @@ class Navbar extends StatelessWidget {
       ),
       child: ClipRect(
         child: BackdropFilter(
-          filter:
-              ColorFilter.mode(Colors.white.withValues(alpha: 0.1), BlendMode.srcOver),
+          filter: ColorFilter.mode(
+            Colors.white.withValues(alpha: 0.1),
+            BlendMode.srcOver,
+          ),
           child: ContentContainer(
             maxWidth: 1200,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -47,18 +47,22 @@ class Navbar extends StatelessWidget {
                 _Logo(),
                 const Spacer(),
                 // Desktop nav
-                if (!isMobile) ...[
-                  for (final item in navItems)
-                    _NavLink(label: item.label, onTap: item.onTap),
-                  const SizedBox(width: 24),
+                if (!showMobileMenu) ...[
+                  Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        for (final item in navItems)
+                          _NavLink(label: item.label, onTap: item.onTap),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 16),
                   _RsvpButton(onTap: onRsvpTap),
                 ],
                 // Mobile hamburger
-                if (isMobile)
-                  _MobileMenuButton(
-                    navItems: navItems,
-                    onRsvpTap: onRsvpTap,
-                  ),
+                if (showMobileMenu)
+                  _MobileMenuButton(navItems: navItems, onRsvpTap: onRsvpTap),
               ],
             ),
           ),
@@ -81,11 +85,7 @@ class _Logo extends StatelessWidget {
             color: AppColors.primary.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
-          child: const Icon(
-            Icons.favorite,
-            size: 16,
-            color: AppColors.primary,
-          ),
+          child: const Icon(Icons.favorite, size: 16, color: AppColors.primary),
         ),
         const SizedBox(width: 10),
         Text(
@@ -139,11 +139,13 @@ class _NavLinkState extends State<_NavLink> {
       child: GestureDetector(
         onTap: widget.onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           child: AnimatedDefaultTextStyle(
             duration: const Duration(milliseconds: 200),
             style: AppTextStyles.navLink.copyWith(
-              color: _hovered ? AppColors.primary : AppColors.textPrimary.withValues(alpha: 0.7),
+              color: _hovered
+                  ? AppColors.primary
+                  : AppColors.textPrimary.withValues(alpha: 0.7),
             ),
             child: Text(widget.label.toUpperCase()),
           ),
@@ -197,10 +199,7 @@ class _RsvpButtonState extends State<_RsvpButton> {
 }
 
 class _MobileMenuButton extends StatelessWidget {
-  const _MobileMenuButton({
-    required this.navItems,
-    required this.onRsvpTap,
-  });
+  const _MobileMenuButton({required this.navItems, required this.onRsvpTap});
 
   final List<NavItem> navItems;
   final VoidCallback onRsvpTap;
@@ -219,7 +218,10 @@ class _MobileMenuButton extends StatelessWidget {
           builder: (ctx) {
             return SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 32,
+                  horizontal: 24,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

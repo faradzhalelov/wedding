@@ -27,9 +27,7 @@ class EventDetailsSection extends StatelessWidget {
           // Timeline + Map
           ContentContainer(
             maxWidth: 1100,
-            child: isMobile
-                ? _MobileLayout()
-                : _DesktopLayout(),
+            child: isMobile ? _MobileLayout() : _DesktopLayout(),
           ),
           SizedBox(height: isMobile ? 48 : 80),
           // CTA
@@ -89,7 +87,11 @@ class _DateHero extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 32),
-        Container(width: 80, height: 1, color: AppColors.primary.withValues(alpha: 0.3)),
+        Container(
+          width: 80,
+          height: 1,
+          color: AppColors.primary.withValues(alpha: 0.3),
+        ),
         const SizedBox(height: 32),
         // Venue cards
         Padding(
@@ -150,7 +152,9 @@ class _InfoCardState extends State<_InfoCard> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: _hovered ? AppColors.primary.withValues(alpha: 0.3) : AppColors.neutral200,
+            color: _hovered
+                ? AppColors.primary.withValues(alpha: 0.3)
+                : AppColors.neutral200,
           ),
           boxShadow: [
             BoxShadow(
@@ -163,11 +167,7 @@ class _InfoCardState extends State<_InfoCard> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              widget.icon,
-              size: 28,
-              color: AppColors.textSecondary,
-            ),
+            Icon(widget.icon, size: 28, color: AppColors.textSecondary),
             const SizedBox(height: 12),
             Text(
               widget.title,
@@ -202,10 +202,14 @@ class _CalendarButtonState extends State<_CalendarButton> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
           decoration: BoxDecoration(
-            color: _hovered ? AppColors.primaryLight.withValues(alpha: 0.3) : Colors.white,
+            color: _hovered
+                ? AppColors.primaryLight.withValues(alpha: 0.3)
+                : Colors.white,
             borderRadius: BorderRadius.circular(100),
             border: Border.all(
-              color: _hovered ? AppColors.primary.withValues(alpha: 0.5) : AppColors.neutral200,
+              color: _hovered
+                  ? AppColors.primary.withValues(alpha: 0.5)
+                  : AppColors.neutral200,
             ),
             boxShadow: [
               BoxShadow(
@@ -246,18 +250,10 @@ class _DesktopLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Left: Map + directions
-        Expanded(
-          flex: 5,
-          child: FadeInOnScroll(
-            child: _MapCard(),
-          ),
-        ),
+        Expanded(flex: 5, child: FadeInOnScroll(child: _MapCard())),
         const SizedBox(width: 64),
         // Right: Timeline
-        Expanded(
-          flex: 7,
-          child: _Timeline(),
-        ),
+        Expanded(flex: 7, child: _Timeline()),
       ],
     );
   }
@@ -331,7 +327,11 @@ class _MapCardState extends State<_MapCard> {
                       errorBuilder: (_, __, ___) => Container(
                         color: AppColors.neutral100,
                         child: const Center(
-                          child: Icon(Icons.map, size: 64, color: AppColors.neutral400),
+                          child: Icon(
+                            Icons.map,
+                            size: 64,
+                            color: AppColors.neutral400,
+                          ),
                         ),
                       ),
                     ),
@@ -371,7 +371,10 @@ class _MapCardState extends State<_MapCard> {
                         ),
                         const SizedBox(height: 8),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white.withValues(alpha: 0.9),
                             borderRadius: BorderRadius.circular(6),
@@ -404,7 +407,11 @@ class _MapCardState extends State<_MapCard> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.directions, size: 18, color: AppColors.textPrimary),
+                          const Icon(
+                            Icons.directions,
+                            size: 18,
+                            color: AppColors.textPrimary,
+                          ),
                           const SizedBox(width: 8),
                           Text(
                             'Get Directions',
@@ -442,7 +449,8 @@ class _Timeline extends StatelessWidget {
       icon: Icons.favorite_outline,
       tag: 'Main Event',
       title: 'The Ceremony',
-      description: 'We say "I do" in the Grand Hall. Please be seated by 16:45.',
+      description:
+          'We say "I do" in the Grand Hall. Please be seated by 16:45.',
     ),
     _TimelineEvent(
       time: '18:00',
@@ -457,7 +465,8 @@ class _Timeline extends StatelessWidget {
       icon: Icons.queue_music_outlined,
       tag: 'Party',
       title: 'Dancing',
-      description: 'Live music performance followed by a DJ set until midnight.',
+      description:
+          'Live music performance followed by a DJ set until midnight.',
     ),
     _TimelineEvent(
       time: '23:00',
@@ -555,10 +564,7 @@ class _TimelineItemState extends State<_TimelineItem> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
-                    border: Border.all(
-                      color: AppColors.primary,
-                      width: 3,
-                    ),
+                    border: Border.all(color: AppColors.primary, width: 3),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.white,
@@ -569,10 +575,7 @@ class _TimelineItemState extends State<_TimelineItem> {
                 ),
                 if (!widget.isLast)
                   Expanded(
-                    child: Container(
-                      width: 1,
-                      color: AppColors.neutral200,
-                    ),
+                    child: Container(width: 1, color: AppColors.neutral200),
                   ),
               ],
             ),
@@ -587,10 +590,14 @@ class _TimelineItemState extends State<_TimelineItem> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.neutral200.withValues(alpha: 0.5)),
+                    border: Border.all(
+                      color: AppColors.neutral200.withValues(alpha: 0.5),
+                    ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: _hovered ? 0.06 : 0.02),
+                        color: Colors.black.withValues(
+                          alpha: _hovered ? 0.06 : 0.02,
+                        ),
                         blurRadius: _hovered ? 16 : 8,
                         offset: const Offset(0, 4),
                       ),
@@ -598,10 +605,15 @@ class _TimelineItemState extends State<_TimelineItem> {
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
                         children: [
-                          Icon(widget.event.icon, size: 18, color: AppColors.primary),
+                          Icon(
+                            widget.event.icon,
+                            size: 18,
+                            color: AppColors.primary,
+                          ),
                           const SizedBox(width: 8),
                           Text(
                             widget.event.tag.toUpperCase(),
@@ -614,7 +626,9 @@ class _TimelineItemState extends State<_TimelineItem> {
                       const SizedBox(height: 6),
                       Text(
                         widget.event.description,
-                        style: AppTextStyles.body.copyWith(color: AppColors.textSecondary),
+                        style: AppTextStyles.body.copyWith(
+                          color: AppColors.textSecondary,
+                        ),
                       ),
                     ],
                   ),
@@ -650,7 +664,9 @@ class _CtaSection extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             'We would be honored to have you celebrate with us.',
-            style: AppTextStyles.bodyLarge.copyWith(color: AppColors.textSecondary),
+            style: AppTextStyles.bodyLarge.copyWith(
+              color: AppColors.textSecondary,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
