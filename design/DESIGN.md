@@ -1,3 +1,0 @@
-mobile design
-
-web design

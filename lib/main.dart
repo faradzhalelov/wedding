@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
+import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const WeddingApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class WeddingApp extends StatelessWidget {
+  const WeddingApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'Riza & Farkhat — Wedding',
+      debugShowCheckedModeBanner: false,
+      theme: buildAppTheme(),
+      home: const HomePage(),
     );
   }
 }

@@ -344,6 +344,3 @@ Generate:
 
 Act like you are designing architecture for a startup expected to scale.
 
-Challenge your own decisions.
-Mention what you deliberately chose NOT to use and why.
-Prefer boring, proven architecture over trendy patterns.
