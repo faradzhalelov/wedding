@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Details - Riza &amp; Farkhat</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6193c",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                        "card-bg": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #aaa; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181112] antialiased overflow-x-hidden min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-[#f4f0f1] transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-primary material-symbols-outlined !text-[28px]">favorite</span>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">Riza &amp; Farkhat</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Our Story</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Gallery</a>
+<a class="text-sm font-medium text-primary transition-colors" href="#">Event Details</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Registry</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-primary/20">
+                RSVP
+            </button>
+<button class="md:hidden p-2 text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex justify-center py-8 px-4 sm:px-6">
+<div class="w-full max-w-md bg-transparent flex flex-col gap-6">
+<div class="bg-card-bg rounded-2xl p-8 shadow-sm border border-gray-100 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<p class="text-primary font-bold tracking-widest text-xs uppercase mb-4">Save the Date</p>
+<div class="flex flex-col items-center mb-6">
+<h1 class="text-5xl font-black text-gray-900 mb-2">24</h1>
+<p class="text-xl font-light text-gray-500 uppercase tracking-widest mb-1">August</p>
+<p class="text-sm text-gray-400 font-medium">2024</p>
+</div>
+<div class="w-12 h-[1px] bg-gray-200 mb-6"></div>
+<h2 class="text-2xl font-bold text-gray-900 mb-1">St. Regis Astana</h2>
+<p class="text-gray-500 font-light text-sm">Astana, Kazakhstan</p>
+<button class="mt-8 w-full bg-gray-900 text-white py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors shadow-lg shadow-gray-200">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                Add to Calendar
+            </button>
+</div>
+<div class="bg-card-bg rounded-2xl p-8 shadow-sm border border-gray-100">
+<h3 class="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                Day Schedule
+            </h3>
+<div class="relative pl-2">
+<div class="absolute left-[11px] top-2 bottom-4 w-[1px] bg-gray-100"></div>
+<div class="relative flex items-start gap-6 mb-8 group">
+<div class="z-10 flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 border-2 border-white ring-1 ring-primary/20 flex items-center justify-center mt-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="flex-grow">
+<span class="block text-primary font-bold text-sm mb-1">16:00 PM</span>
+<h4 class="text-gray-900 font-bold text-base">Welcome Ceremony</h4>
+<p class="text-gray-500 text-sm mt-1 font-light leading-relaxed">Guests arrival and welcome drinks in the Winter Garden.</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6 mb-8 group">
+<div class="z-10 flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 border-2 border-white ring-1 ring-gray-200 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[12px] text-gray-400">favorite</span>
+</div>
+<div class="flex-grow">
+<span class="block text-gray-400 font-bold text-sm mb-1">17:30 PM</span>
+<h4 class="text-gray-900 font-bold text-base">The Vows</h4>
+<p class="text-gray-500 text-sm mt-1 font-light leading-relaxed">Exchange of rings and vows in the Grand Ballroom.</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6 mb-8 group">
+<div class="z-10 flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 border-2 border-white ring-1 ring-gray-200 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[12px] text-gray-400">restaurant</span>
+</div>
+<div class="flex-grow">
+<span class="block text-gray-400 font-bold text-sm mb-1">19:00 PM</span>
+<h4 class="text-gray-900 font-bold text-base">Dinner &amp; Toasts</h4>
+<p class="text-gray-500 text-sm mt-1 font-light leading-relaxed">A curated 5-course meal followed by speeches.</p>
+</div>
+</div>
+<div class="relative flex items-start gap-6 group">
+<div class="z-10 flex-shrink-0 w-6 h-6 rounded-full bg-gray-50 border-2 border-white ring-1 ring-gray-200 flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[12px] text-gray-400">music_note</span>
+</div>
+<div class="flex-grow">
+<span class="block text-gray-400 font-bold text-sm mb-1">21:00 PM</span>
+<h4 class="text-gray-900 font-bold text-base">Party &amp; Dancing</h4>
+<p class="text-gray-500 text-sm mt-1 font-light leading-relaxed">Live band performance and open bar until late.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-card-bg rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+<div class="relative h-48 w-full bg-gray-200">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOAQ0sEvZ-QJsCOwwM8XpBfiYF5OVRmXLgF0oepmY9zapwWhUyFAu4R5PubIdAC5Fh0COPZbSLrXN-ifOPDD0UVrOt6T9fknVEHw5r7KuM_lFttH60QARW2ZYXm_owxpi5sBQcDXFv6FFyr6xTwHw1DyK-KwjdA1JVANPEjHivXuqru1-SrlGUga0yxvu0KX3zXNGyhOJPJcbawxnvaS4MG9B6cVty9an-UZNqDiAaMdKvGTKhhwNps-WsXkptZR0Mpty2f208CvU'); background-color: #e5e7eb;">
+<div class="w-full h-full bg-[#e8eaed] relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-lg">location_on</span>
+</div>
+<div class="absolute top-0 left-1/3 w-4 h-full bg-white transform -skew-x-12 opacity-50"></div>
+<div class="absolute top-1/4 left-0 w-full h-3 bg-white transform -rotate-6 opacity-50"></div>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold shadow-sm text-gray-700">
+                    St. Regis Astana
+                </div>
+</div>
+<div class="p-6">
+<div class="flex items-start gap-4 mb-6">
+<div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 text-gray-400">
+<span class="material-symbols-outlined">near_me</span>
+</div>
+<div>
+<h4 class="font-bold text-gray-900 text-sm">Getting There</h4>
+<p class="text-gray-500 text-sm mt-1 leading-relaxed">
+                            Valet parking is available at the main entrance. For guests using rideshare, please set destination to the Grand Ballroom entrance.
+                        </p>
+</div>
+</div>
+<button class="w-full bg-primary/5 text-primary border border-primary/10 py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+                    Get Directions
+                </button>
+</div>
+</div>
+<div class="text-center py-4">
+<p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Questions on the day?</p>
+<a class="inline-flex items-center gap-2 text-gray-600 font-bold hover:text-primary transition-colors" href="tel:+77001234567">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                Call Wedding Planner
+            </a>
+</div>
+</div>
+</main>
+<footer class="bg-[#fcfafa] border-t border-[#f4f0f1] py-8 px-6 mt-auto">
+<div class="max-w-md mx-auto text-center">
+<p class="text-gray-400 text-sm">
+            © 2024 Riza &amp; Farkhat
+        </p>
+</div>
+</footer>
+
+</body></html>

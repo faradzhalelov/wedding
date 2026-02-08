@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memories &amp; Story Gallery - Riza &amp; Farkhat</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af37", 
+                        "primary-dark": "#b08d1a",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1a1a",
+                        "stone-100": "#f5f5f4",
+                        "stone-800": "#292524",
+                    },
+                    fontFamily: {
+                        "sans": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }.no-scrollbar {
+            -ms-overflow-style: none;scrollbar-width: none;}
+        .parallax-wrapper {
+            perspective: 1px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .parallax-group {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .parallax-base {
+            transform: translateZ(0);
+        }
+        .parallax-back {
+            transform: translateZ(-1px) scale(2);
+        }@keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-stone-900 font-sans text-stone-800 dark:text-stone-200 antialiased overflow-hidden">
+<div class="mx-auto max-w-[480px] bg-white dark:bg-stone-900 h-[100vh] relative shadow-2xl overflow-y-auto no-scrollbar scroll-smooth">
+<nav class="fixed top-0 w-full max-w-[480px] z-50 px-6 py-6 flex justify-between items-center bg-gradient-to-b from-white/90 to-transparent dark:from-stone-900/90 pointer-events-none">
+<div class="pointer-events-auto">
+<span class="font-serif text-xl italic font-bold text-stone-900 dark:text-stone-100">R &amp; F</span>
+</div>
+<button class="pointer-events-auto p-2 rounded-full bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm shadow-sm hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-stone-800 dark:text-stone-200 !text-[20px]">menu</span>
+</button>
+</nav>
+<header class="relative w-full h-[85vh] flex flex-col justify-end pb-12 overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img alt="Couple walking" class="w-full h-full object-cover brightness-[0.85]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuGN38Cn96yUuwZxMjRVMnT-f5dvNAF0v7CgPm1pIGk4AF4pvV2xdA1bxQOudsaU9OBFQn6Fy5jexIMIQn3lx2D0k5QyFcceIPv-yzZJOq7MpqTs-OelILu5kLosnEdY0zENnlBALw9Nw2LIFOz_puzbriYZgsUyJyCRoQ7vsmQZDLkh60sh29ftyQxzFNMEW_4eNesRFWxRRtWAxWDw2CefAs_N5sVBeQJ2oNYGZIYJg-scjaG7TRDPDxeU7NOp_YCUQPgHgtEME"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-6 text-white text-center">
+<div class="flex flex-col items-center gap-4 animate-fade-up">
+<span class="text-xs font-medium tracking-[0.3em] uppercase opacity-90 border-b border-white/40 pb-2">Since 2018</span>
+<h1 class="font-serif text-6xl leading-[0.9] italic">
+                        Our<br/>Story
+                    </h1>
+<p class="font-light text-sm max-w-[240px] leading-relaxed opacity-90 mt-2">
+                        A visual journal of two lives becoming one in the heart of Astana.
+                    </p>
+</div>
+</div>
+<div class="absolute bottom-4 w-full flex justify-center animate-bounce">
+<span class="material-symbols-outlined text-white opacity-60">keyboard_arrow_down</span>
+</div>
+</header>
+<section class="py-20 px-6 relative bg-background-light dark:bg-stone-900">
+<div class="flex flex-col items-center mb-12">
+<span class="w-px h-12 bg-primary mb-4 block"></span>
+<span class="font-serif italic text-primary text-xl">Chapter I</span>
+<h2 class="text-xs font-bold uppercase tracking-widest text-stone-400 mt-2">Origins</h2>
+</div>
+<div class="mb-24 relative group">
+<div class="w-[85%] ml-auto relative z-10">
+<div class="aspect-[3/4] overflow-hidden rounded-sm shadow-lg">
+<img alt="Riza childhood" class="w-full h-full object-cover transition-transform duration-[2s] ease-in-out group-hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjCnq0gZ4HdmaI9UzfA91_pQ83B1IctfDiaJfAbS8AEjK5DUhzz4Fn8KbDkq8RS70jmyS-9Qc2Esg66kpVy5cqsOtV1Lbci6udOpphHF7TVEW72Xi37jLI1Zd11DyhBMswzfEv4AbAwGNa5ZUi50cX92YKrlvrPkA6bVd4HuldYyIA8XXcfoCQfBgM47KN9vIOuOj8--W9SPf-P_ky75nBnh2MRnZtLo79jdlw569DHPpBJGxzgR3PorCBRKtOfOgT0as0Dx1QpgU"/>
+</div>
+</div>
+<div class="absolute -left-2 top-10 w-1/2 z-20">
+<div class="bg-white dark:bg-stone-800 p-4 shadow-xl border-l-2 border-primary">
+<span class="block font-serif text-2xl mb-1 italic">Riza</span>
+<p class="text-[10px] uppercase tracking-wide text-stone-500 font-bold">1996</p>
+</div>
+</div>
+<p class="mt-6 text-sm font-serif italic text-stone-600 dark:text-stone-400 text-right w-[85%] ml-auto leading-relaxed">
+                    "Dreaming big under the vast northern skies."
+                </p>
+</div>
+<div class="relative group">
+<div class="w-[85%] mr-auto relative z-10">
+<div class="aspect-[3/4] overflow-hidden rounded-sm shadow-lg">
+<img alt="Farkhat childhood" class="w-full h-full object-cover transition-transform duration-[2s] ease-in-out group-hover:scale-110 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYF8uqeoxUz-AQKaaIb3KQs4dW1hm35sDMwjHK5nC6pFjv74Bee4IWHF7182PKU5rukyIRWA1o2ljK4Ccjob506TClzz3heyVC0-VyPepfP09HPSWy34eDYpaRipOLlSRluuuHhriCWgQKBrymYL4LxLhrEki-9kR4n1JD7_IG4dZitNebQvmqIKPOp1q5h6-TFY6jSigmr5oeM2iJJE-0DSE-R70igmKKi-d_pP2atvBw84DMZ8i73_AM3DXLkED-k7ifRoSkFKY"/>
+</div>
+</div>
+<div class="absolute -right-2 top-10 w-1/2 z-20">
+<div class="bg-white dark:bg-stone-800 p-4 shadow-xl border-r-2 border-primary text-right">
+<span class="block font-serif text-2xl mb-1 italic">Farkhat</span>
+<p class="text-[10px] uppercase tracking-wide text-stone-500 font-bold">1998</p>
+</div>
+</div>
+<p class="mt-6 text-sm font-serif italic text-stone-600 dark:text-stone-400 text-left w-[85%] mr-auto leading-relaxed">
+                    "A curious soul, always ready for the next adventure."
+                </p>
+</div>
+</section>
+<div class="w-full px-6 py-12 flex items-center justify-center gap-4 opacity-30">
+<span class="h-px w-full bg-stone-400"></span>
+<span class="font-serif italic text-2xl">&amp;</span>
+<span class="h-px w-full bg-stone-400"></span>
+</div>
+<section class="bg-white dark:bg-stone-900 pb-20">
+<div class="sticky top-0 bg-white/95 dark:bg-stone-900/95 backdrop-blur-sm z-30 px-6 py-4 border-b border-stone-100 dark:border-stone-800">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-2xl italic text-stone-900 dark:text-white">The Encounter</h2>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">2018</span>
+</div>
+</div>
+<div class="px-4 py-12 space-y-12">
+<div class="relative">
+<p class="font-serif text-xl leading-relaxed text-center text-stone-800 dark:text-stone-200 px-2">
+<span class="text-4xl text-primary float-left mr-2 leading-[0.8] font-serif">"</span>
+                        It started with coffee, a shared table, and hours that felt like minutes.
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="w-full aspect-[4/5] overflow-hidden relative">
+<img alt="Cafe moment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiFP3yGXT93UKHCPnWrDlvtShW5tHTOjTdw0EWXhTpmVCIpRDiaB3fK6CqaO2k-_wAQK9ouvvhQ2VUqtmmHh1NSzZxPcdtQiiF0gAKGI2RkL7PzKsq0NkQ5nfeySs5PkGeh9_8Q7GOW2Un8hdcCvsX1cOUo-A2WjK6S4IXHiwzFmdzhaf2_VunccPY_REFF2Yx-2tOZIpH0BPlLxEigN8paUL2vLmYxfXhQ3c8aAG6ZmI1GA1dCmXS7bgerbiu05rnYe_ckwic5bM"/>
+<div class="absolute bottom-4 left-4 bg-white/90 dark:bg-black/70 px-3 py-1 text-xs uppercase tracking-widest font-bold">
+                             Downtown
+                         </div>
+</div>
+<div class="grid grid-cols-2 gap-4 h-64">
+<div class="h-full overflow-hidden">
+<img alt="Coffee detail" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg-hTOZchTQ4nNG-pFHtXfKS27SWHaARHR5VOATTI6UWZbXKXj23ffMxICbvQlDLVrFrUX5JDIUjctOf0wJjuNuWmGzLeLgf7rDNxJZH9vdWSn5oBG3fadFQf0mifwxX9lntB-b03g9wF5TJm2TBxS-TTXgoUbZWmHbYLGVOCUim6EZ2vZhnbW0atOgk7DDQR-YDgdBQK2CoqIz0J_h2aDV45dqY4B9pJpi_WZdKS4K7d1BocPk_gsqIziwwZbE6PPjPOVpCjkn-M"/>
+</div>
+<div class="h-full overflow-hidden relative">
+<img alt="Portrait" class="w-full h-full object-cover sepia-[0.3]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd-hjlqDDfCNhbIP0h6M4wC2bOENmg1jK31ERU08qnu-YhZOymv4UR2x1nrfCbo5eBSzDvQH6Ccv0W7_qzpSZGMhnbpHt1kkMKBSzGddhmt4rx3hTnXCazEwCEqFSB1bKvhG4OphhEjcART-McZbcI4u3bxDxEYBHNa72ZW-T_UHXfBxUcArjIXbQmKofyOO4Vb8oHKs_O5K6ItVJ5O3eAJw4eb5FHYxkjYa1CrYP8OpGYZI4q8CAgW9Bx5l5K8QqWtznVJT2a2Lw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/50 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full">
+<div class="aspect-video overflow-hidden mb-2">
+<img alt="Astana sunset" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyc52vjWFmt8veN76nC0VLAbKg3hK-zNSIzsqxVz_DfEidDqc664qvm0a7ZCqQfXv6kOureXzy5TiCipgDwSy4bOzGiP7OBrK5bjnPRAxsj7HdBS3yOkMgZT-jV2UCkPn6xDI_WKEii3iPQfY4CSMTUOSvfLa053yidcG8sloGYZsLIOplnLl-RVNhcUqI9FjuZjB9G2itDLrWFeKOGXDjdnlaFGS5tqi1vfW0cub4gq6jZ5fnhOL0C4Y4mOFe75p8f5J4IgTLJxk"/>
+</div>
+<p class="text-[10px] text-stone-400 uppercase tracking-widest text-center">The city where it happened</p>
+</div>
+</div>
+</div>
+</section>
+<section class="relative h-[60vh] w-full overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0">
+<img alt="Adventure" class="w-full h-full object-cover scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKPkaSJiWBaQ1b2MvdFnGisgI5AIdGjS4SC9XxD8lodaRgS71TtbHWla2eiar51XpDEzLnQ4kaBIIpNZTO4r9HuyH_BwqyW0nlg67MHchHrakCvkCJMIl_JosxKPhT75SvifAoKq2gIvL5UWewGFmuf-bIR8qLpaUb2hLZVPZelus1tZ1qmXlALbcS869sEEGO2vnjc-YWzAQAnaxpjKj4jpPlIHHfs0uu3-9m_53pfEOBrE7CA4dqO_AMsuJ_F_f7AYJ9sVwhLco"/>
+<div class="absolute inset-0 bg-stone-900/40"></div>
+</div>
+<div class="relative z-10 px-8 text-center text-white">
+<h3 class="font-serif text-4xl italic mb-4">"Two souls, one path."</h3>
+<a class="inline-block border border-white/60 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-colors" href="#">
+                     Full Gallery
+                 </a>
+</div>
+</section>
+<section class="py-24 px-6 bg-stone-50 dark:bg-stone-800">
+<div class="flex flex-col gap-8">
+<div class="relative">
+<span class="absolute -top-6 -left-2 font-serif text-8xl text-stone-200 dark:text-stone-700 -z-10">Yes</span>
+<h2 class="font-serif text-3xl text-stone-900 dark:text-white mb-4 z-10 relative">The Promise</h2>
+<p class="font-light text-stone-600 dark:text-stone-300 leading-relaxed text-sm">
+                        Underneath the starlit sky, surrounded by the whispers of the ocean. A quiet question, a resounding answer.
+                    </p>
+<p class="mt-4 text-xs font-bold text-primary uppercase tracking-widest border-l-2 border-primary pl-3">
+                        August 14, 2022
+                    </p>
+</div>
+<div class="w-full aspect-[4/5] p-2 bg-white dark:bg-stone-700 shadow-xl rotate-1">
+<div class="w-full h-full overflow-hidden">
+<img alt="Engagement" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGNepL2EkRDoOs7IwXcMzVmAuDbVLW7ylU3ly7JquuUuyhXsN0PYz-vD3i_138qK2YpIDRgyOq0nvQ0OL_7DPOb5hArhe0LueJWNJPmS32MCuw4q6F-g2lUVpMrhnqcaRh9rP7ElV5YRf9O_BqtRnfSiBDig0ANNrhSgYT2qjCM_LssYbDI2TfQk3H_WNidWMODK5gmi5ndGfnLkpaZydMl9N5-RwO0sOQj53CIEiKZtsHU2aMkfk2qVpYom_roxdKDKZ2e-2nFss"/>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-stone-900 text-white py-16 px-6 text-center">
+<div class="mb-8">
+<span class="material-symbols-outlined !text-4xl font-light opacity-50 mb-4">mail</span>
+<h2 class="font-serif text-3xl italic mb-2">Join Us</h2>
+<p class="text-stone-400 text-sm font-light max-w-xs mx-auto">
+                    We would be honored to have you celebrate our union with us.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full py-4 bg-primary text-white font-bold text-xs uppercase tracking-widest hover:bg-primary-dark transition-colors">
+                    RSVP Now
+                </button>
+<button class="w-full py-4 bg-transparent border border-stone-700 text-stone-300 font-bold text-xs uppercase tracking-widest hover:bg-stone-800 transition-colors">
+                    Venue Details
+                </button>
+</div>
+<div class="mt-12 pt-8 border-t border-stone-800">
+<p class="font-serif text-xl italic text-stone-500">R &amp; F</p>
+<p class="text-[10px] text-stone-600 mt-2 uppercase tracking-widest">© 2023 Made with love</p>
+</div>
+</footer>
+</div>
+
+</body></html>

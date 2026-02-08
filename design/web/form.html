@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Riza &amp; Farkhat Wedding RSVP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6193c",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                        "neutral-soft": "#F2EBEB", // Derived from primary hue
+                        "neutral-dark": "#3D1A1E",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better elegance */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #e6193c20;
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #e6193c40;
+        }
+        .form-radio:checked {
+            background-color: #e6193c;
+            border-color: #e6193c;
+        }
+        /* Hide number input spinners */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-neutral-dark dark:text-neutral-200 antialiased min-h-screen flex flex-col selection:bg-primary/20">
+<div class="relative flex min-h-screen w-full flex-col justify-center items-center p-4 sm:p-6 lg:p-12 overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+<div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-3xl"></div>
+<div class="absolute top-[40%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-3xl"></div>
+</div>
+<!-- Main Card -->
+<div class="relative z-10 w-full max-w-2xl bg-white dark:bg-[#2A171B] rounded-2xl shadow-[0_20px_60px_-15px_rgba(230,25,60,0.1)] overflow-hidden transition-all duration-300">
+<!-- Header Image Section -->
+<div class="relative w-full h-48 sm:h-64 overflow-hidden group">
+<img alt="Elegant floral wedding background" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract soft focus floral wedding background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbT5dHsN_3W8kITc8IqpF1sjKKZ-aEzC4viG6XOlkoGUDfZdMN3DwLF_KtRWx4ZDRJ454PmfJCtJgMj4ZU89dJIvTTf6NzB8r6Lhkd96duP00y3Ndp6uyeuChuBh3glfWPfE6TAJFhOBroLo3SO2LswiTW-dQlEa9f9B6PA10cylZaBwIVKfwLod8ojQmaiyEn8BGaKkth0sWTvUH0GLlwCfuKep6m3REZ5sKMtiEqfIiqQnbL92hRd1gFVrfC1jqp4Id6yJcgB9w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 sm:p-10 w-full text-white">
+<p class="text-xs font-bold tracking-[0.2em] uppercase mb-2 opacity-90">Please join us</p>
+<h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-1">Riza &amp; Farkhat</h1>
+<div class="flex items-center gap-2 opacity-90 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Astana, Kazakhstan</span>
+</div>
+</div>
+</div>
+<!-- Form Content -->
+<div class="p-6 sm:p-10 flex flex-col gap-8">
+<!-- RSVP Status Toggle -->
+<div class="flex flex-col gap-3">
+<label class="text-lg font-bold text-neutral-dark dark:text-white">Will you be attending?</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Accept Option -->
+<label class="group relative cursor-pointer">
+<input checked="" class="peer sr-only" name="attendance" type="radio" value="accept"/>
+<div class="h-full w-full p-4 rounded-xl border-2 border-transparent bg-neutral-soft/50 hover:bg-neutral-soft dark:bg-white/5 dark:hover:bg-white/10 transition-all duration-200 peer-checked:bg-white peer-checked:border-primary/20 peer-checked:shadow-[0_4px_20px_rgba(230,25,60,0.15)] dark:peer-checked:bg-[#381E22] dark:peer-checked:border-primary/40 flex items-center gap-4">
+<div class="w-6 h-6 rounded-full border-2 border-neutral-400 peer-checked:border-primary flex items-center justify-center shrink-0 transition-colors">
+<div class="w-2.5 h-2.5 rounded-full bg-primary opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<div>
+<p class="font-bold text-neutral-dark dark:text-white group-hover:text-primary transition-colors">Joyfully Accept</p>
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Can't wait to celebrate!</p>
+</div>
+</div>
+</label>
+<!-- Decline Option -->
+<label class="group relative cursor-pointer">
+<input class="peer sr-only" name="attendance" type="radio" value="decline"/>
+<div class="h-full w-full p-4 rounded-xl border-2 border-transparent bg-neutral-soft/50 hover:bg-neutral-soft dark:bg-white/5 dark:hover:bg-white/10 transition-all duration-200 peer-checked:bg-white peer-checked:border-neutral-300 peer-checked:shadow-sm dark:peer-checked:bg-[#381E22] dark:peer-checked:border-neutral-600 flex items-center gap-4">
+<div class="w-6 h-6 rounded-full border-2 border-neutral-400 peer-checked:border-neutral-500 flex items-center justify-center shrink-0 transition-colors">
+<div class="w-2.5 h-2.5 rounded-full bg-neutral-500 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+</div>
+<div>
+<p class="font-bold text-neutral-dark dark:text-white group-hover:text-neutral-600 transition-colors">Regretfully Decline</p>
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Will be there in spirit</p>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Interactive Details Section (Dynamic) -->
+<div class="flex flex-col gap-8 transition-all duration-500 ease-in-out">
+<!-- Guest Counter -->
+<div class="flex flex-col gap-3">
+<label class="text-lg font-bold text-neutral-dark dark:text-white">Number of Guests</label>
+<div class="flex items-center gap-6 p-4 rounded-xl bg-neutral-soft/30 dark:bg-white/5 border border-transparent focus-within:border-primary/20 transition-colors">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-white dark:bg-white/10 text-neutral-dark dark:text-white shadow-sm hover:bg-primary hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="button">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<div class="flex-1 text-center">
+<span class="text-3xl font-extrabold text-neutral-dark dark:text-white tracking-tight">2</span>
+<span class="text-sm font-medium text-neutral-500 dark:text-neutral-400 ml-1">people</span>
+</div>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-white dark:bg-white/10 text-neutral-dark dark:text-white shadow-sm hover:bg-primary hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+</div>
+</div>
+<!-- Dietary Requirements -->
+<div class="flex flex-col gap-2">
+<label class="text-lg font-bold text-neutral-dark dark:text-white" for="dietary">Dietary Requirements</label>
+<div class="relative group">
+<textarea class="peer w-full bg-neutral-soft/30 dark:bg-white/5 border-0 border-b-2 border-neutral-300 dark:border-neutral-700 rounded-t-lg px-4 pt-6 pb-2 text-neutral-dark dark:text-white placeholder-transparent focus:ring-0 focus:border-primary dark:focus:border-primary transition-all resize-none" id="dietary" placeholder="Any allergies or requests?" rows="3"></textarea>
+<label class="absolute left-4 top-2 text-xs font-medium text-neutral-500 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-placeholder-shown:text-neutral-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-primary" for="dietary">
+                                Any allergies or special requests?
+                            </label>
+</div>
+<p class="text-xs text-neutral-400 px-1">We will do our best to accommodate your needs.</p>
+</div>
+<!-- Contact Email (Optional) -->
+<div class="flex flex-col gap-2">
+<label class="text-lg font-bold text-neutral-dark dark:text-white" for="email">Your Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-neutral-400">mail</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-neutral-soft/30 dark:bg-white/5 border-0 rounded-lg text-neutral-dark dark:text-white placeholder-neutral-400 focus:ring-2 focus:ring-primary/20 focus:bg-white dark:focus:bg-white/10 transition-all" id="email" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+</div>
+<!-- Footer & CTA -->
+<div class="pt-4 border-t border-neutral-200 dark:border-white/10 flex flex-col items-center gap-4">
+<p class="text-sm text-neutral-500 dark:text-neutral-400">Please respond by <span class="font-bold text-primary">August 20th</span></p>
+<button class="group relative w-full overflow-hidden rounded-xl bg-primary px-8 py-4 text-white shadow-lg shadow-primary/30 transition-all hover:shadow-primary/50 hover:scale-[1.01] active:scale-[0.99]">
+<div class="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 group-hover:translate-y-0"></div>
+<span class="relative flex items-center justify-center gap-2 text-lg font-bold tracking-wide">
+                            Confirm Attendance
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Subtle Footer Branding -->
+<div class="mt-8 text-center opacity-40 hover:opacity-100 transition-opacity">
+<p class="text-xs font-medium tracking-widest uppercase">Designed for Riza &amp; Farkhat</p>
+</div>
+</div>
+</body></html>

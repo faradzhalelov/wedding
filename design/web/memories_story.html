@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Memories &amp; Story Gallery - Riza &amp; Farkhat</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6193c",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #aaa; 
+        }
+        
+        /* Subtle image hover effect */
+        .gallery-image {
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+        .gallery-image:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181112] antialiased overflow-x-hidden">
+<!-- Header / Navbar -->
+<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-[#f4f0f1] transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-primary material-symbols-outlined !text-[28px]">favorite</span>
+<h2 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white uppercase">Riza &amp; Farkhat</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Our Story</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Gallery</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Venue</a>
+<a class="text-sm font-medium hover:text-primary transition-colors text-gray-600 dark:text-gray-300" href="#">Registry</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:bg-red-700 transition-colors shadow-lg shadow-primary/20">
+                    RSVP
+                </button>
+<button class="md:hidden p-2 text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-24 px-6 md:px-12 lg:px-24 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="flex items-center gap-2 text-primary font-medium tracking-widest text-xs uppercase mb-2">
+<span class="h-[1px] w-8 bg-primary block"></span>
+                    The Beginning
+                </div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-gray-900 dark:text-white">
+                    Two Lives,<br/>
+<span class="text-gray-400 font-light italic">One Path.</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl mt-4 leading-relaxed font-light">
+                    From childhood memories in the windy streets of Astana to our journey across the world together. A visual diary of the moments that shaped us.
+                </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] w-full rounded-lg overflow-hidden bg-gray-100 shadow-xl">
+<div class="w-full h-full bg-cover bg-center gallery-image !filter-none" data-alt="Couple holding hands walking away in a minimalist setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuGN38Cn96yUuwZxMjRVMnT-f5dvNAF0v7CgPm1pIGk4AF4pvV2xdA1bxQOudsaU9OBFQn6Fy5jexIMIQn3lx2D0k5QyFcceIPv-yzZJOq7MpqTs-OelILu5kLosnEdY0zENnlBALw9Nw2LIFOz_puzbriYZgsUyJyCRoQ7vsmQZDLkh60sh29ftyQxzFNMEW_4eNesRFWxRRtWAxWDw2CefAs_N5sVBeQJ2oNYGZIYJg-scjaG7TRDPDxeU7NOp_YCUQPgHgtEME');"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-6 shadow-lg rounded-lg max-w-[200px] hidden md:block">
+<p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Established</p>
+<p class="text-2xl font-bold text-primary">2018</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section 1: Origins (1998) -->
+<section class="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row items-baseline gap-4 mb-16 border-b border-gray-200 pb-4">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white">Origins</h2>
+<span class="text-primary font-medium">1996 — 1998</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+<!-- Riza -->
+<div class="flex flex-col gap-4 group">
+<div class="relative aspect-[3/4] w-full max-w-md ml-auto rounded-lg overflow-hidden bg-gray-100 shadow-md transform group-hover:-translate-y-2 transition-transform duration-500">
+<div class="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Riza</div>
+<div class="w-full h-full bg-cover bg-center gallery-image" data-alt="Black and white photo of a smiling young girl playing outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjCnq0gZ4HdmaI9UzfA91_pQ83B1IctfDiaJfAbS8AEjK5DUhzz4Fn8KbDkq8RS70jmyS-9Qc2Esg66kpVy5cqsOtV1Lbci6udOpphHF7TVEW72Xi37jLI1Zd11DyhBMswzfEv4AbAwGNa5ZUi50cX92YKrlvrPkA6bVd4HuldYyIA8XXcfoCQfBgM47KN9vIOuOj8--W9SPf-P_ky75nBnh2MRnZtLo79jdlw569DHPpBJGxzgR3PorCBRKtOfOgT0as0Dx1QpgU');"></div>
+</div>
+<p class="text-sm text-gray-500 text-right max-w-xs ml-auto italic">
+                    "Growing up with dreams bigger than the city skyline."
+                </p>
+</div>
+<!-- Farkhat -->
+<div class="flex flex-col gap-4 group mt-12 md:mt-0">
+<div class="relative aspect-[3/4] w-full max-w-md mr-auto rounded-lg overflow-hidden bg-gray-100 shadow-md transform group-hover:-translate-y-2 transition-transform duration-500">
+<div class="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Farkhat</div>
+<div class="w-full h-full bg-cover bg-center gallery-image" data-alt="Vintage style photo of a young boy sitting on a bicycle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYF8uqeoxUz-AQKaaIb3KQs4dW1hm35sDMwjHK5nC6pFjv74Bee4IWHF7182PKU5rukyIRWA1o2ljK4Ccjob506TClzz3heyVC0-VyPepfP09HPSWy34eDYpaRipOLlSRluuuHhriCWgQKBrymYL4LxLhrEki-9kR4n1JD7_IG4dZitNebQvmqIKPOp1q5h6-TFY6jSigmr5oeM2iJJE-0DSE-R70igmKKi-d_pP2atvBw84DMZ8i73_AM3DXLkED-k7ifRoSkFKY');"></div>
+</div>
+<p class="text-sm text-gray-500 text-left max-w-xs mr-auto italic">
+                    "Always exploring, always curious. The start of an adventure."
+                </p>
+</div>
+</div>
+</section>
+<!-- Narrative Break -->
+<div class="py-20 flex justify-center">
+<div class="h-24 w-[1px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-50"></div>
+</div>
+<!-- Gallery Section 2: The Meeting & Early Days -->
+<section class="py-12 px-6 md:px-12 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+<!-- Text Block -->
+<div class="lg:col-span-4 flex flex-col justify-center lg:sticky lg:top-32 h-fit mb-12 lg:mb-0">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-sm font-bold uppercase tracking-widest text-gray-400">Astana, 2018</span>
+</div>
+<h3 class="text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">It started with <br/>coffee.</h3>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                    We met at a small cafe downtown. Neither of us knew that a simple conversation about art and architecture would turn into hours of talking until the shop closed. It was effortless, quiet, and undeniable.
+                </p>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">local_cafe</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+<span class="material-symbols-outlined">music_note</span>
+</div>
+</div>
+</div>
+<!-- Mosaic Grid -->
+<div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+<!-- Large Tall Image -->
+<div class="col-span-2 row-span-2 md:col-span-2 md:row-span-3 rounded-lg overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center gallery-image transition-all duration-700" data-alt="Candid shot of a couple laughing together at a cafe table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiFP3yGXT93UKHCPnWrDlvtShW5tHTOjTdw0EWXhTpmVCIpRDiaB3fK6CqaO2k-_wAQK9ouvvhQ2VUqtmmHh1NSzZxPcdtQiiF0gAKGI2RkL7PzKsq0NkQ5nfeySs5PkGeh9_8Q7GOW2Un8hdcCvsX1cOUo-A2WjK6S4IXHiwzFmdzhaf2_VunccPY_REFF2Yx-2tOZIpH0BPlLxEigN8paUL2vLmYxfXhQ3c8aAG6ZmI1GA1dCmXS7bgerbiu05rnYe_ckwic5bM');"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<p class="text-white font-medium">First Date</p>
+</div>
+</div>
+<!-- Square Image -->
+<div class="col-span-1 row-span-1 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center gallery-image" data-alt="Close up of two coffee cups on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDg-hTOZchTQ4nNG-pFHtXfKS27SWHaARHR5VOATTI6UWZbXKXj23ffMxICbvQlDLVrFrUX5JDIUjctOf0wJjuNuWmGzLeLgf7rDNxJZH9vdWSn5oBG3fadFQf0mifwxX9lntB-b03g9wF5TJm2TBxS-TTXgoUbZWmHbYLGVOCUim6EZ2vZhnbW0atOgk7DDQR-YDgdBQK2CoqIz0J_h2aDV45dqY4B9pJpi_WZdKS4K7d1BocPk_gsqIziwwZbE6PPjPOVpCjkn-M');"></div>
+</div>
+<!-- Portrait Image -->
+<div class="col-span-1 row-span-2 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center gallery-image" data-alt="Soft focus portrait of Riza smiling looking away" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAd-hjlqDDfCNhbIP0h6M4wC2bOENmg1jK31ERU08qnu-YhZOymv4UR2x1nrfCbo5eBSzDvQH6Ccv0W7_qzpSZGMhnbpHt1kkMKBSzGddhmt4rx3hTnXCazEwCEqFSB1bKvhG4OphhEjcART-McZbcI4u3bxDxEYBHNa72ZW-T_UHXfBxUcArjIXbQmKofyOO4Vb8oHKs_O5K6ItVJ5O3eAJw4eb5FHYxkjYa1CrYP8OpGYZI4q8CAgW9Bx5l5K8QqWtznVJT2a2Lw');"></div>
+</div>
+<!-- Landscape Image -->
+<div class="col-span-2 row-span-1 md:col-span-1 rounded-lg overflow-hidden group relative">
+<div class="w-full h-full bg-cover bg-center gallery-image" data-alt="Cityscape of Astana during sunset with modern architecture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyc52vjWFmt8veN76nC0VLAbKg3hK-zNSIzsqxVz_DfEidDqc664qvm0a7ZCqQfXv6kOureXzy5TiCipgDwSy4bOzGiP7OBrK5bjnPRAxsj7HdBS3yOkMgZT-jV2UCkPn6xDI_WKEii3iPQfY4CSMTUOSvfLa053yidcG8sloGYZsLIOplnLl-RVNhcUqI9FjuZjB9G2itDLrWFeKOGXDjdnlaFGS5tqi1vfW0cub4gq6jZ5fnhOL0C4Y4mOFe75p8f5J4IgTLJxk');"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Width Parallax Section -->
+<section class="py-24">
+<div class="w-full h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" data-alt="Wide panoramic shot of mountains and a lake with a couple in the distance" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKPkaSJiWBaQ1b2MvdFnGisgI5AIdGjS4SC9XxD8lodaRgS71TtbHWla2eiar51XpDEzLnQ4kaBIIpNZTO4r9HuyH_BwqyW0nlg67MHchHrakCvkCJMIl_JosxKPhT75SvifAoKq2gIvL5UWewGFmuf-bIR8qLpaUb2hLZVPZelus1tZ1qmXlALbcS869sEEGO2vnjc-YWzAQAnaxpjKj4jpPlIHHfs0uu3-9m_53pfEOBrE7CA4dqO_AMsuJ_F_f7AYJ9sVwhLco');">
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="relative z-10 text-center px-6">
+<span class="block text-white/80 text-sm font-bold tracking-[0.2em] uppercase mb-4">Adventures</span>
+<h2 class="text-5xl md:text-7xl font-bold text-white mb-6">Exploring the World</h2>
+<button class="bg-white text-primary px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-gray-100 transition-colors">
+                    View Full Gallery
+                </button>
+</div>
+</div>
+</section>
+<!-- The Proposal Section -->
+<section class="py-24 px-6 md:px-12 max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<div class="relative pl-8 md:pl-12 border-l-2 border-primary/30 py-4">
+<span class="text-9xl absolute -top-8 -left-6 text-primary/10 font-serif font-bold">"</span>
+<h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">The Yes.</h3>
+<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed italic mb-6">
+                        Underneath the starlit sky, surrounded by the whispers of the ocean. It was the easiest question I've ever had to answer. A promise for forever.
+                    </p>
+<p class="text-sm font-bold text-primary uppercase tracking-widest">
+                        August 14, 2022
+                    </p>
+</div>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2">
+<div class="aspect-[4/5] rounded-lg overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<div class="w-full h-full bg-cover bg-center" data-alt="Couple embracing closely showing engagement ring detail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGNepL2EkRDoOs7IwXcMzVmAuDbVLW7ylU3ly7JquuUuyhXsN0PYz-vD3i_138qK2YpIDRgyOq0nvQ0OL_7DPOb5hArhe0LueJWNJPmS32MCuw4q6F-g2lUVpMrhnqcaRh9rP7ElV5YRf9O_BqtRnfSiBDig0ANNrhSgYT2qjCM_LssYbDI2TfQk3H_WNidWMODK5gmi5ndGfnLkpaZydMl9N5-RwO0sOQj53CIEiKZtsHU2aMkfk2qVpYom_roxdKDKZ2e-2nFss');"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<footer class="bg-[#fcfafa] border-t border-[#f4f0f1] py-20 px-6">
+<div class="max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined !text-3xl">mark_email_unread</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-900 tracking-tight">Be part of our next chapter.</h2>
+<p class="text-gray-600 text-lg max-w-lg">
+                We would be honored to have you celebrate our union with us. Please let us know if you can make it.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="bg-primary text-white px-10 py-4 rounded-lg font-bold text-base hover:bg-red-700 transition-all shadow-xl shadow-primary/20 w-full sm:w-auto">
+                    RSVP Now
+                </button>
+<button class="bg-white border border-gray-200 text-gray-900 px-10 py-4 rounded-lg font-bold text-base hover:bg-gray-50 transition-colors w-full sm:w-auto">
+                    Venue Details
+                </button>
+</div>
+<p class="text-gray-400 text-sm mt-8">
+                © 2023 Riza &amp; Farkhat. Made with love.
+            </p>
+</div>
+</footer>
+</body></html>

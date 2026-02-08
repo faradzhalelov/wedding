@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Riza &amp; Farkhat - Event Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e6193c",
+                        "primary-light": "#fce8eb", // derived light tone
+                        "primary-dark": "#b81430", // derived dark tone
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211114",
+                        "neutral-text": "#181112",
+                        "neutral-subtle": "#886369", // taupe derived from primary hue
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background-color: #e5e7eb;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-neutral-text antialiased">
+<!-- Navigation -->
+<div class="relative flex w-full flex-col bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 border-b border-[#f4f0f1] dark:border-white/10">
+<div class="flex justify-center w-full">
+<div class="flex w-full max-w-[1200px] items-center justify-between px-6 py-4 md:px-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">favorite</span>
+<h2 class="text-neutral-text dark:text-white text-lg font-bold tracking-tight">Riza &amp; Farkhat</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-neutral-text dark:text-white/80 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-neutral-text dark:text-white/80 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Our Story</a>
+<a class="text-primary text-sm font-bold" href="#">Details</a>
+<a class="text-neutral-text dark:text-white/80 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Gallery</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-sm">
+                        RSVP
+                    </button>
+<button class="md:hidden p-2 text-neutral-text dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex flex-col items-center w-full min-h-screen">
+<!-- Hero: Date & Venue -->
+<section class="w-full max-w-[960px] px-6 py-16 md:py-24 flex flex-col items-center text-center">
+<span class="text-primary font-medium tracking-widest text-sm uppercase mb-6">The Celebration</span>
+<div class="flex flex-col md:flex-row items-baseline gap-2 md:gap-6 mb-8">
+<h1 class="text-6xl md:text-8xl font-extralight text-neutral-text dark:text-white tracking-tighter">June</h1>
+<div class="flex flex-col items-start md:items-baseline">
+<span class="text-4xl md:text-6xl font-bold text-neutral-text dark:text-white">24th</span>
+<span class="text-xl md:text-2xl font-light text-neutral-subtle">2024</span>
+</div>
+</div>
+<div class="w-24 h-[1px] bg-primary/30 mb-10"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl mb-12">
+<div class="flex flex-col items-center md:items-end gap-2 p-6 rounded-xl bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-sm">
+<span class="material-symbols-outlined text-neutral-subtle text-3xl mb-2">location_on</span>
+<h3 class="text-lg font-bold text-neutral-text dark:text-white">Astana, Kazakhstan</h3>
+<p class="text-neutral-subtle text-sm">The Capital City</p>
+</div>
+<div class="flex flex-col items-center md:items-start gap-2 p-6 rounded-xl bg-white dark:bg-white/5 border border-neutral-100 dark:border-white/10 shadow-sm">
+<span class="material-symbols-outlined text-neutral-subtle text-3xl mb-2">storefront</span> <!-- storefront as venue icon -->
+<h3 class="text-lg font-bold text-neutral-text dark:text-white">The Guest House</h3>
+<p class="text-neutral-subtle text-sm">Main Ballroom</p>
+</div>
+</div>
+<button class="group flex items-center gap-3 bg-white dark:bg-white/10 border border-neutral-200 dark:border-white/10 hover:border-primary/50 hover:bg-primary-light/20 dark:hover:bg-primary/20 transition-all px-6 py-3 rounded-full text-neutral-text dark:text-white text-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">calendar_add_on</span>
+                Add to Calendar
+            </button>
+</section>
+<!-- Two Column Layout: Map & Timeline -->
+<section class="w-full max-w-[1100px] px-6 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+<!-- Column 1: The Location (Sticky on Desktop) -->
+<div class="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-32 h-fit">
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl font-bold text-neutral-text dark:text-white">Getting There</h2>
+<p class="text-neutral-subtle leading-relaxed">
+                        The Guest House is located in the heart of Astana. We've arranged a special rate for guests staying at the venue hotel. Valet parking will be complimentary.
+                    </p>
+</div>
+<!-- Custom Styled Map Card -->
+<div class="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square overflow-hidden rounded-2xl shadow-lg border border-neutral-200 dark:border-white/10 group">
+<img alt="Minimalist abstract map view of Astana city streets with light colors" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-in-out grayscale-[20%]" data-alt="Minimalist abstract map view of Astana city streets with light colors" data-location="Astana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHDjq9kyLvZjCURbw8i2dXQgI28PweKGLFmPRvMUqxZ8j8x_UO3UW7BwCaSK8supC4I1CVMd7uOnXfr3beRvmfNpqZZACtBKjDkAi_DlS62SNnMZwXJMnwa6DrJW4ufgRPhRgrGad0PT88DkrYAb9lV-mZaKydaR6IfYH_HZvzQmLcT-abWzbUNj_imzC_btG8yMDZ6dlnqsGFEtW4PUugOlAwSK9jdFXJGeeHJMbumJCZsoJicMqEW1bmeswrzB09cyEUZdNcxzE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+<!-- Map Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 animate-bounce" style="animation-duration: 2s;">
+<div class="bg-primary text-white p-2 rounded-full shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-2xl block">location_on</span>
+</div>
+<div class="bg-white/90 backdrop-blur px-3 py-1 rounded-md shadow-sm">
+<span class="text-xs font-bold text-primary">Venue</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<a class="flex w-full items-center justify-center gap-2 bg-white text-neutral-text text-sm font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors shadow-lg" href="#">
+<span class="material-symbols-outlined text-lg">directions</span>
+                            Get Directions
+                        </a>
+</div>
+</div>
+</div>
+<!-- Column 2: The Timeline -->
+<div class="lg:col-span-7 flex flex-col">
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-neutral-text dark:text-white">Order of Events</h2>
+<p class="text-neutral-subtle mt-2">A guide to our special day.</p>
+</div>
+<div class="relative timeline-line pl-0 md:pl-0">
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 md:mb-16 group">
+<!-- Desktop Time (Left) -->
+<div class="hidden md:flex flex-1 justify-end w-full pr-10">
+<span class="text-2xl font-light text-neutral-text dark:text-white">16:00</span>
+</div>
+<!-- Dot -->
+<div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)] dark:shadow-[0_0_0_4px_rgba(33,17,20,1)] group-hover:scale-125 transition-transform"></div>
+<!-- Content (Right on Desktop) -->
+<div class="flex-1 w-full pl-12 md:pl-10">
+<!-- Mobile Time -->
+<span class="md:hidden text-lg font-bold text-primary mb-1 block">16:00</span>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-2 text-primary">
+<span class="material-symbols-outlined">diversity_3</span>
+<span class="text-xs font-bold uppercase tracking-wider">Arrival</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-text dark:text-white mb-1">Welcome Gathering</h3>
+<p class="text-neutral-subtle text-sm leading-relaxed">Guests arrive. Light refreshments and cocktails will be served in the garden foyer.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 md:mb-16 group">
+<div class="hidden md:flex flex-1 justify-end w-full pr-10">
+<span class="text-2xl font-light text-neutral-text dark:text-white">17:00</span>
+</div>
+<div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)] dark:shadow-[0_0_0_4px_rgba(33,17,20,1)] group-hover:scale-125 transition-transform"></div>
+<div class="flex-1 w-full pl-12 md:pl-10">
+<span class="md:hidden text-lg font-bold text-primary mb-1 block">17:00</span>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-2 text-primary">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-xs font-bold uppercase tracking-wider">Main Event</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-text dark:text-white mb-1">The Ceremony</h3>
+<p class="text-neutral-subtle text-sm leading-relaxed">We say "I do" in the Grand Hall. Please be seated by 16:45.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 md:mb-16 group">
+<div class="hidden md:flex flex-1 justify-end w-full pr-10">
+<span class="text-2xl font-light text-neutral-text dark:text-white">18:00</span>
+</div>
+<div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)] dark:shadow-[0_0_0_4px_rgba(33,17,20,1)] group-hover:scale-125 transition-transform"></div>
+<div class="flex-1 w-full pl-12 md:pl-10">
+<span class="md:hidden text-lg font-bold text-primary mb-1 block">18:00</span>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-2 text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="text-xs font-bold uppercase tracking-wider">Reception</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-text dark:text-white mb-1">Dinner &amp; Toasts</h3>
+<p class="text-neutral-subtle text-sm leading-relaxed">A three-course dinner featuring local delicacies, followed by speeches from family and friends.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 md:mb-16 group">
+<div class="hidden md:flex flex-1 justify-end w-full pr-10">
+<span class="text-2xl font-light text-neutral-text dark:text-white">20:00</span>
+</div>
+<div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)] dark:shadow-[0_0_0_4px_rgba(33,17,20,1)] group-hover:scale-125 transition-transform"></div>
+<div class="flex-1 w-full pl-12 md:pl-10">
+<span class="md:hidden text-lg font-bold text-primary mb-1 block">20:00</span>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-2 text-primary">
+<span class="material-symbols-outlined">queue_music</span>
+<span class="text-xs font-bold uppercase tracking-wider">Party</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-text dark:text-white mb-1">Dancing</h3>
+<p class="text-neutral-subtle text-sm leading-relaxed">Live music performance followed by a DJ set until midnight.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 5 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center gap-6 group">
+<div class="hidden md:flex flex-1 justify-end w-full pr-10">
+<span class="text-2xl font-light text-neutral-text dark:text-white">23:00</span>
+</div>
+<div class="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full z-10 shadow-[0_0_0_4px_rgba(255,255,255,1)] dark:shadow-[0_0_0_4px_rgba(33,17,20,1)] group-hover:scale-125 transition-transform"></div>
+<div class="flex-1 w-full pl-12 md:pl-10">
+<span class="md:hidden text-lg font-bold text-primary mb-1 block">23:00</span>
+<div class="bg-white dark:bg-white/5 p-6 rounded-xl border border-neutral-100 dark:border-white/5 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3 mb-2 text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-wider">Finale</span>
+</div>
+<h3 class="text-xl font-bold text-neutral-text dark:text-white mb-1">Farewell</h3>
+<p class="text-neutral-subtle text-sm leading-relaxed">Sparkler send-off for the newlyweds.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Minimal Footer / CTA -->
+<section class="w-full bg-white dark:bg-white/5 border-t border-neutral-100 dark:border-white/10 py-16 flex justify-center">
+<div class="max-w-2xl w-full px-6 flex flex-col items-center text-center gap-6">
+<span class="material-symbols-outlined text-4xl text-neutral-subtle/50">mark_email_read</span>
+<h2 class="text-3xl md:text-4xl font-bold text-neutral-text dark:text-white">Can you make it?</h2>
+<p class="text-neutral-subtle text-lg">We would be honored to have you celebrate with us.</p>
+<div class="flex flex-wrap gap-4 justify-center mt-2">
+<button class="bg-primary hover:bg-primary-dark transition-all text-white text-base font-bold px-8 py-3 rounded-xl shadow-lg shadow-primary/30">
+                        RSVP Now
+                    </button>
+<button class="bg-transparent border border-neutral-200 dark:border-white/20 hover:bg-neutral-50 dark:hover:bg-white/5 text-neutral-text dark:text-white text-base font-medium px-8 py-3 rounded-xl">
+                        Contact Us
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full bg-background-light dark:bg-background-dark py-8">
+<div class="text-center text-neutral-subtle text-sm">
+            © 2024 Riza &amp; Farkhat Wedding. Designed with love.
+        </div>
+</footer>
+</body></html>
