@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
+import '../utils/extentions.dart';
 import '../widgets/fade_in_on_scroll.dart';
 import '../widgets/responsive_builder.dart';
 
@@ -55,9 +56,7 @@ class _RsvpSectionState extends State<RsvpSection> {
 
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: AppColors.backgroundLight,
-      ),
+      decoration: const BoxDecoration(color: AppColors.backgroundLight),
       padding: EdgeInsets.symmetric(vertical: isMobile ? 64 : 100),
       child: Center(
         child: ConstrainedBox(
@@ -65,7 +64,9 @@ class _RsvpSectionState extends State<RsvpSection> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: FadeInOnScroll(
-              child: _submitted ? _SuccessState() : _buildForm(isMobile),
+              child: _submitted
+                  ? _SuccessState()
+                  : _buildForm(context, isMobile),
             ),
           ),
         ),
@@ -73,7 +74,8 @@ class _RsvpSectionState extends State<RsvpSection> {
     );
   }
 
-  Widget _buildForm(bool isMobile) {
+  Widget _buildForm(BuildContext context, bool isMobile) {
+    final l10n = context.localization;
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
@@ -101,27 +103,28 @@ class _RsvpSectionState extends State<RsvpSection> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   // Name field
-                  _FormLabel('Your Name'),
+                  _FormLabel(l10n.rsvpYourName),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _nameController,
-                    decoration: const InputDecoration(
-                      hintText: 'Enter your full name',
+                    decoration: InputDecoration(
+                      hintText: l10n.rsvpEnterFullName,
                     ),
-                    validator: (v) =>
-                        (v == null || v.trim().isEmpty) ? 'Please enter your name' : null,
+                    validator: (v) => (v == null || v.trim().isEmpty)
+                        ? l10n.rsvpPleaseEnterName
+                        : null,
                   ),
                   const SizedBox(height: 28),
                   // Attendance toggle
-                  _FormLabel('Will you be attending?'),
+                  _FormLabel(l10n.rsvpWillAttend),
                   const SizedBox(height: 12),
                   Row(
                     children: [
                       Expanded(
                         child: _AttendanceOption(
                           selected: _attending,
-                          title: 'Joyfully Accept',
-                          subtitle: "Can't wait to celebrate!",
+                          title: l10n.rsvpJoyfullyAccept,
+                          subtitle: l10n.rsvpCantWait,
                           color: AppColors.primary,
                           onTap: () => setState(() => _attending = true),
                         ),
@@ -130,8 +133,8 @@ class _RsvpSectionState extends State<RsvpSection> {
                       Expanded(
                         child: _AttendanceOption(
                           selected: !_attending,
-                          title: 'Regretfully Decline',
-                          subtitle: 'Will be there in spirit',
+                          title: l10n.rsvpRegretfullyDecline,
+                          subtitle: l10n.rsvpInSpirit,
                           color: AppColors.neutral500,
                           onTap: () => setState(() => _attending = false),
                         ),
@@ -148,26 +151,28 @@ class _RsvpSectionState extends State<RsvpSection> {
                             children: [
                               const SizedBox(height: 28),
                               // Guest counter
-                              _FormLabel('Number of Guests'),
+                              _FormLabel(l10n.rsvpNumberOfGuests),
                               const SizedBox(height: 12),
                               _GuestCounter(
+                                context: context,
                                 count: _guestCount,
-                                onChanged: (v) => setState(() => _guestCount = v),
+                                onChanged: (v) =>
+                                    setState(() => _guestCount = v),
                               ),
                               const SizedBox(height: 28),
                               // Dietary
-                              _FormLabel('Dietary Requirements'),
+                              _FormLabel(l10n.rsvpDietaryRequirements),
                               const SizedBox(height: 8),
                               TextFormField(
                                 controller: _dietaryController,
                                 maxLines: 3,
-                                decoration: const InputDecoration(
-                                  hintText: 'Any allergies or special requests?',
+                                decoration: InputDecoration(
+                                  hintText: l10n.rsvpAllergies,
                                 ),
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                'We will do our best to accommodate your needs.',
+                                l10n.rsvpAccommodate,
                                 style: AppTextStyles.bodySmall.copyWith(
                                   color: AppColors.neutral400,
                                 ),
@@ -178,35 +183,32 @@ class _RsvpSectionState extends State<RsvpSection> {
                   ),
                   const SizedBox(height: 28),
                   // Email
-                  _FormLabel('Your Email'),
+                  _FormLabel(l10n.rsvpYourEmail),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
-                      hintText: 'email@example.com',
-                      prefixIcon: Icon(Icons.mail_outline, size: 20),
+                    decoration: InputDecoration(
+                      hintText: l10n.rsvpEmailPlaceholder,
+                      prefixIcon: const Icon(Icons.mail_outline, size: 20),
                     ),
                     validator: (v) {
                       if (v == null || v.trim().isEmpty) {
-                        return 'Please enter your email';
+                        return l10n.rsvpPleaseEnterEmail;
                       }
                       if (!v.contains('@') || !v.contains('.')) {
-                        return 'Please enter a valid email';
+                        return l10n.rsvpValidEmail;
                       }
                       return null;
                     },
                   ),
                   const SizedBox(height: 32),
                   // Divider
-                  Container(
-                    height: 1,
-                    color: AppColors.neutral200,
-                  ),
+                  Container(height: 1, color: AppColors.neutral200),
                   const SizedBox(height: 24),
                   // Deadline note
                   Text(
-                    'Please respond by August 20th',
+                    l10n.rsvpRespondBy,
                     style: AppTextStyles.bodySmall.copyWith(
                       color: AppColors.neutral500,
                     ),
@@ -215,6 +217,7 @@ class _RsvpSectionState extends State<RsvpSection> {
                   const SizedBox(height: 16),
                   // Submit
                   _SubmitButton(
+                    context: context,
                     onTap: _submit,
                     loading: _submitting,
                   ),
@@ -231,6 +234,7 @@ class _RsvpSectionState extends State<RsvpSection> {
 class _HeaderImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return SizedBox(
       height: 220,
       width: double.infinity,
@@ -240,9 +244,8 @@ class _HeaderImage extends StatelessWidget {
           Image.network(
             'https://lh3.googleusercontent.com/aida-public/AB6AXuAbT5dHsN_3W8kITc8IqpF1sjKKZ-aEzC4viG6XOlkoGUDfZdMN3DwLF_KtRWx4ZDRJ454PmfJCtJgMj4ZU89dJIvTTf6NzB8r6Lhkd96duP00y3Ndp6uyeuChuBh3glfWPfE6TAJFhOBroLo3SO2LswiTW-dQlEa9f9B6PA10cylZaBwIVKfwLod8ojQmaiyEn8BGaKkth0sWTvUH0GLlwCfuKep6m3REZ5sKMtiEqfIiqQnbL92hRd1gFVrfC1jqp4Id6yJcgB9w',
             fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => Container(
-              color: AppColors.primaryLight,
-            ),
+            errorBuilder: (_, __, ___) =>
+                Container(color: AppColors.primaryLight),
           ),
           const DecoratedBox(
             decoration: BoxDecoration(
@@ -261,7 +264,7 @@ class _HeaderImage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'PLEASE JOIN US',
+                  l10n.rsvpPleaseJoinUs,
                   style: AppTextStyles.label.copyWith(
                     color: Colors.white.withValues(alpha: 0.9),
                     fontSize: 10,
@@ -270,7 +273,7 @@ class _HeaderImage extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'Riza & Farkhat',
+                  'Farkhat & Riza',
                   style: AppTextStyles.heading2.copyWith(
                     color: Colors.white,
                     fontSize: 36,
@@ -286,7 +289,7 @@ class _HeaderImage extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      'Astana, Kazakhstan',
+                      l10n.rsvpLocation,
                       style: AppTextStyles.body.copyWith(
                         color: Colors.white.withValues(alpha: 0.9),
                         fontWeight: FontWeight.w500,
@@ -309,10 +312,7 @@ class _FormLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: AppTextStyles.heading3.copyWith(fontSize: 16),
-    );
+    return Text(text, style: AppTextStyles.heading3.copyWith(fontSize: 16));
   }
 }
 
@@ -350,7 +350,9 @@ class _AttendanceOptionState extends State<_AttendanceOption> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: widget.selected ? Colors.white : AppColors.neutral100.withValues(alpha: 0.5),
+            color: widget.selected
+                ? Colors.white
+                : AppColors.neutral100.withValues(alpha: 0.5),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: widget.selected
@@ -378,7 +380,9 @@ class _AttendanceOptionState extends State<_AttendanceOption> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: widget.selected ? widget.color : AppColors.neutral400,
+                    color: widget.selected
+                        ? widget.color
+                        : AppColors.neutral400,
                     width: 2,
                   ),
                 ),
@@ -407,10 +411,7 @@ class _AttendanceOptionState extends State<_AttendanceOption> {
                       ),
                     ),
                     const SizedBox(height: 2),
-                    Text(
-                      widget.subtitle,
-                      style: AppTextStyles.bodySmall,
-                    ),
+                    Text(widget.subtitle, style: AppTextStyles.bodySmall),
                   ],
                 ),
               ),
@@ -423,12 +424,18 @@ class _AttendanceOptionState extends State<_AttendanceOption> {
 }
 
 class _GuestCounter extends StatelessWidget {
-  const _GuestCounter({required this.count, required this.onChanged});
+  const _GuestCounter({
+    required this.context,
+    required this.count,
+    required this.onChanged,
+  });
+  final BuildContext context;
   final int count;
   final ValueChanged<int> onChanged;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
@@ -452,7 +459,7 @@ class _GuestCounter extends StatelessWidget {
                       style: AppTextStyles.heading2.copyWith(fontSize: 28),
                     ),
                     TextSpan(
-                      text: 'people',
+                      text: l10n.rsvpPeople,
                       style: AppTextStyles.body.copyWith(
                         color: AppColors.neutral500,
                         fontWeight: FontWeight.w500,
@@ -507,7 +514,9 @@ class _CounterButtonState extends State<_CounterButton> {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: _hovered && widget.enabled ? AppColors.primary : Colors.white,
+            color: _hovered && widget.enabled
+                ? AppColors.primary
+                : Colors.white,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
@@ -522,8 +531,8 @@ class _CounterButtonState extends State<_CounterButton> {
             color: !widget.enabled
                 ? AppColors.neutral400
                 : _hovered
-                    ? Colors.white
-                    : AppColors.textPrimary,
+                ? Colors.white
+                : AppColors.textPrimary,
           ),
         ),
       ),
@@ -532,7 +541,12 @@ class _CounterButtonState extends State<_CounterButton> {
 }
 
 class _SubmitButton extends StatefulWidget {
-  const _SubmitButton({required this.onTap, required this.loading});
+  const _SubmitButton({
+    required this.context,
+    required this.onTap,
+    required this.loading,
+  });
+  final BuildContext context;
   final VoidCallback onTap;
   final bool loading;
 
@@ -545,6 +559,7 @@ class _SubmitButtonState extends State<_SubmitButton> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
@@ -560,14 +575,18 @@ class _SubmitButtonState extends State<_SubmitButton> {
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withValues(alpha: _hovered ? 0.4 : 0.25),
+                color: AppColors.primary.withValues(
+                  alpha: _hovered ? 0.4 : 0.25,
+                ),
                 blurRadius: _hovered ? 24 : 16,
                 offset: const Offset(0, 6),
               ),
             ],
           ),
           transform: _hovered
-              ? (Matrix4.identity()..setEntry(0, 0, 1.01)..setEntry(1, 1, 1.01))
+              ? (Matrix4.identity()
+                  ..setEntry(0, 0, 1.01)
+                  ..setEntry(1, 1, 1.01))
               : Matrix4.identity(),
           transformAlignment: Alignment.center,
           child: Center(
@@ -584,7 +603,7 @@ class _SubmitButtonState extends State<_SubmitButton> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'CONFIRM ATTENDANCE',
+                        l10n.rsvpConfirmButton,
                         style: AppTextStyles.button.copyWith(
                           fontSize: 15,
                           letterSpacing: 1.5,
@@ -604,6 +623,7 @@ class _SubmitButtonState extends State<_SubmitButton> {
 class _SuccessState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
       decoration: BoxDecoration(
@@ -635,12 +655,12 @@ class _SuccessState extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           Text(
-            'Thank You!',
+            l10n.rsvpThankYou,
             style: AppTextStyles.heading2.copyWith(fontSize: 32),
           ),
           const SizedBox(height: 12),
           Text(
-            'Your response has been recorded.\nWe look forward to celebrating with you!',
+            l10n.rsvpResponseRecorded,
             style: AppTextStyles.bodyLarge.copyWith(
               color: AppColors.textSecondary,
             ),
@@ -654,7 +674,7 @@ class _SuccessState extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              'Astana  \u2022  June 2025',
+              l10n.rsvpEventDate,
               style: AppTextStyles.body.copyWith(
                 color: AppColors.primary,
                 fontWeight: FontWeight.w600,

@@ -288,6 +288,570 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Feel pressured to wear a full tuxedo.'**
   String get dontItem4;
+
+  /// No description provided for @theCelebration.
+  ///
+  /// In en, this message translates to:
+  /// **'THE CELEBRATION'**
+  String get theCelebration;
+
+  /// No description provided for @monthJune.
+  ///
+  /// In en, this message translates to:
+  /// **'June'**
+  String get monthJune;
+
+  /// No description provided for @day24th.
+  ///
+  /// In en, this message translates to:
+  /// **'27th'**
+  String get day24th;
+
+  /// No description provided for @year2025.
+  ///
+  /// In en, this message translates to:
+  /// **'2026'**
+  String get year2025;
+
+  /// No description provided for @locationAstana.
+  ///
+  /// In en, this message translates to:
+  /// **'Astana, Kazakhstan'**
+  String get locationAstana;
+
+  /// No description provided for @locationSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The Capital City'**
+  String get locationSubtitle;
+
+  /// No description provided for @venueGuestHouse.
+  ///
+  /// In en, this message translates to:
+  /// **'The Guest House'**
+  String get venueGuestHouse;
+
+  /// No description provided for @venueMainBallroom.
+  ///
+  /// In en, this message translates to:
+  /// **'Main Ballroom'**
+  String get venueMainBallroom;
+
+  /// No description provided for @addToCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to Calendar'**
+  String get addToCalendar;
+
+  /// No description provided for @gettingThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting There'**
+  String get gettingThere;
+
+  /// No description provided for @gettingThereDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'The Guest House is located in the heart of Astana. Valet parking will be complimentary.'**
+  String get gettingThereDesc;
+
+  /// No description provided for @venue.
+  ///
+  /// In en, this message translates to:
+  /// **'Venue'**
+  String get venue;
+
+  /// No description provided for @getDirections.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Directions'**
+  String get getDirections;
+
+  /// No description provided for @orderOfEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Order of Events'**
+  String get orderOfEvents;
+
+  /// No description provided for @orderOfEventsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A guide to our special day.'**
+  String get orderOfEventsDesc;
+
+  /// No description provided for @event1Time.
+  ///
+  /// In en, this message translates to:
+  /// **'16:00'**
+  String get event1Time;
+
+  /// No description provided for @event1Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrival'**
+  String get event1Tag;
+
+  /// No description provided for @event1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Gathering'**
+  String get event1Title;
+
+  /// No description provided for @event1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Guests arrive. Light refreshments and cocktails will be served in the garden foyer.'**
+  String get event1Desc;
+
+  /// No description provided for @event2Time.
+  ///
+  /// In en, this message translates to:
+  /// **'17:00'**
+  String get event2Time;
+
+  /// No description provided for @event2Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Main Event'**
+  String get event2Tag;
+
+  /// No description provided for @event2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'The Ceremony'**
+  String get event2Title;
+
+  /// No description provided for @event2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'We say \"I do\" in the Grand Hall. Please be seated by 16:45.'**
+  String get event2Desc;
+
+  /// No description provided for @event3Time.
+  ///
+  /// In en, this message translates to:
+  /// **'18:00'**
+  String get event3Time;
+
+  /// No description provided for @event3Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Reception'**
+  String get event3Tag;
+
+  /// No description provided for @event3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinner & Toasts'**
+  String get event3Title;
+
+  /// No description provided for @event3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'A three-course dinner featuring local delicacies, followed by speeches from family and friends.'**
+  String get event3Desc;
+
+  /// No description provided for @event4Time.
+  ///
+  /// In en, this message translates to:
+  /// **'20:00'**
+  String get event4Time;
+
+  /// No description provided for @event4Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Party'**
+  String get event4Tag;
+
+  /// No description provided for @event4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Dancing'**
+  String get event4Title;
+
+  /// No description provided for @event4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Live music performance followed by a DJ set until midnight.'**
+  String get event4Desc;
+
+  /// No description provided for @event5Time.
+  ///
+  /// In en, this message translates to:
+  /// **'23:00'**
+  String get event5Time;
+
+  /// No description provided for @event5Tag.
+  ///
+  /// In en, this message translates to:
+  /// **'Finale'**
+  String get event5Tag;
+
+  /// No description provided for @event5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Farewell'**
+  String get event5Title;
+
+  /// No description provided for @event5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Sparkler send-off for the newlyweds.'**
+  String get event5Desc;
+
+  /// No description provided for @canYouMakeIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Can you make it?'**
+  String get canYouMakeIt;
+
+  /// No description provided for @honoredToHaveYou.
+  ///
+  /// In en, this message translates to:
+  /// **'We would be honored to have you celebrate with us.'**
+  String get honoredToHaveYou;
+
+  /// No description provided for @astanaCity.
+  ///
+  /// In en, this message translates to:
+  /// **'ASTANA'**
+  String get astanaCity;
+
+  /// No description provided for @designedWithLove.
+  ///
+  /// In en, this message translates to:
+  /// **'Designed with love for Riza & Farkhat'**
+  String get designedWithLove;
+
+  /// No description provided for @memoriesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Memories'**
+  String get memoriesLabel;
+
+  /// No description provided for @ourStoryInPhotos.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Story in Photos'**
+  String get ourStoryInPhotos;
+
+  /// No description provided for @memoriesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'From childhood memories to the journey that brought us together.'**
+  String get memoriesSubtitle;
+
+  /// No description provided for @twoLives.
+  ///
+  /// In en, this message translates to:
+  /// **'Two Lives,'**
+  String get twoLives;
+
+  /// No description provided for @onePath.
+  ///
+  /// In en, this message translates to:
+  /// **'One Path.'**
+  String get onePath;
+
+  /// No description provided for @memoryDescMobile.
+  ///
+  /// In en, this message translates to:
+  /// **'From childhood memories in the streets of Astana to our journey together. A visual diary of the moments that shaped us.'**
+  String get memoryDescMobile;
+
+  /// No description provided for @memoryDescDesktop.
+  ///
+  /// In en, this message translates to:
+  /// **'From childhood memories in the streets of Astana to our journey across the world together. A visual diary of the moments that shaped us.'**
+  String get memoryDescDesktop;
+
+  /// No description provided for @established.
+  ///
+  /// In en, this message translates to:
+  /// **'ESTABLISHED'**
+  String get established;
+
+  /// No description provided for @year2018.
+  ///
+  /// In en, this message translates to:
+  /// **'2018'**
+  String get year2018;
+
+  /// No description provided for @galleryRiza.
+  ///
+  /// In en, this message translates to:
+  /// **'Riza'**
+  String get galleryRiza;
+
+  /// No description provided for @galleryRizaCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Growing up with dreams bigger than the city skyline.'**
+  String get galleryRizaCaption;
+
+  /// No description provided for @galleryFarkhat.
+  ///
+  /// In en, this message translates to:
+  /// **'Farkhat'**
+  String get galleryFarkhat;
+
+  /// No description provided for @galleryFarkhatCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Always exploring, always curious.'**
+  String get galleryFarkhatCaption;
+
+  /// No description provided for @galleryFirstDate.
+  ///
+  /// In en, this message translates to:
+  /// **'First Date'**
+  String get galleryFirstDate;
+
+  /// No description provided for @galleryFirstDateCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'It started with coffee.'**
+  String get galleryFirstDateCaption;
+
+  /// No description provided for @galleryTogether.
+  ///
+  /// In en, this message translates to:
+  /// **'Together'**
+  String get galleryTogether;
+
+  /// No description provided for @galleryTogetherCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'A look that says everything.'**
+  String get galleryTogetherCaption;
+
+  /// No description provided for @galleryOurCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Our City'**
+  String get galleryOurCity;
+
+  /// No description provided for @galleryOurCityCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Where it all began.'**
+  String get galleryOurCityCaption;
+
+  /// No description provided for @galleryTheYes.
+  ///
+  /// In en, this message translates to:
+  /// **'The Yes'**
+  String get galleryTheYes;
+
+  /// No description provided for @galleryTheYesCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'A promise for forever.'**
+  String get galleryTheYesCaption;
+
+  /// No description provided for @galleryProposalDate.
+  ///
+  /// In en, this message translates to:
+  /// **'AUGUST 14, 2022'**
+  String get galleryProposalDate;
+
+  /// No description provided for @heroEyebrow.
+  ///
+  /// In en, this message translates to:
+  /// **'THE WEDDING CELEBRATION'**
+  String get heroEyebrow;
+
+  /// No description provided for @heroLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'ASTANA, KAZAKHSTAN'**
+  String get heroLocation;
+
+  /// No description provided for @heroDate.
+  ///
+  /// In en, this message translates to:
+  /// **'JUNE 2026'**
+  String get heroDate;
+
+  /// No description provided for @heroSaveTheDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the Date'**
+  String get heroSaveTheDate;
+
+  /// No description provided for @heroConfirmButton.
+  ///
+  /// In en, this message translates to:
+  /// **'CONFIRM ATTENDANCE'**
+  String get heroConfirmButton;
+
+  /// No description provided for @navRsvpButton.
+  ///
+  /// In en, this message translates to:
+  /// **'RSVP NOW'**
+  String get navRsvpButton;
+
+  /// No description provided for @rsvpYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Name'**
+  String get rsvpYourName;
+
+  /// No description provided for @rsvpEnterFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get rsvpEnterFullName;
+
+  /// No description provided for @rsvpPleaseEnterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your name'**
+  String get rsvpPleaseEnterName;
+
+  /// No description provided for @rsvpWillAttend.
+  ///
+  /// In en, this message translates to:
+  /// **'Will you be attending?'**
+  String get rsvpWillAttend;
+
+  /// No description provided for @rsvpJoyfullyAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'Joyfully Accept'**
+  String get rsvpJoyfullyAccept;
+
+  /// No description provided for @rsvpCantWait.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t wait to celebrate!'**
+  String get rsvpCantWait;
+
+  /// No description provided for @rsvpRegretfullyDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Regretfully Decline'**
+  String get rsvpRegretfullyDecline;
+
+  /// No description provided for @rsvpInSpirit.
+  ///
+  /// In en, this message translates to:
+  /// **'Will be there in spirit'**
+  String get rsvpInSpirit;
+
+  /// No description provided for @rsvpNumberOfGuests.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of Guests'**
+  String get rsvpNumberOfGuests;
+
+  /// No description provided for @rsvpPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'people'**
+  String get rsvpPeople;
+
+  /// No description provided for @rsvpDietaryRequirements.
+  ///
+  /// In en, this message translates to:
+  /// **'Dietary Requirements'**
+  String get rsvpDietaryRequirements;
+
+  /// No description provided for @rsvpAllergies.
+  ///
+  /// In en, this message translates to:
+  /// **'Any allergies or special requests?'**
+  String get rsvpAllergies;
+
+  /// No description provided for @rsvpAccommodate.
+  ///
+  /// In en, this message translates to:
+  /// **'We will do our best to accommodate your needs.'**
+  String get rsvpAccommodate;
+
+  /// No description provided for @rsvpYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Email'**
+  String get rsvpYourEmail;
+
+  /// No description provided for @rsvpEmailPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'email@example.com'**
+  String get rsvpEmailPlaceholder;
+
+  /// No description provided for @rsvpPleaseEnterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get rsvpPleaseEnterEmail;
+
+  /// No description provided for @rsvpValidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get rsvpValidEmail;
+
+  /// No description provided for @rsvpRespondBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Please respond by the end of February'**
+  String get rsvpRespondBy;
+
+  /// No description provided for @rsvpConfirmButton.
+  ///
+  /// In en, this message translates to:
+  /// **'CONFIRM ATTENDANCE'**
+  String get rsvpConfirmButton;
+
+  /// No description provided for @rsvpPleaseJoinUs.
+  ///
+  /// In en, this message translates to:
+  /// **'PLEASE JOIN US'**
+  String get rsvpPleaseJoinUs;
+
+  /// No description provided for @rsvpLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Astana, Kazakhstan'**
+  String get rsvpLocation;
+
+  /// No description provided for @rsvpThankYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank You!'**
+  String get rsvpThankYou;
+
+  /// No description provided for @rsvpResponseRecorded.
+  ///
+  /// In en, this message translates to:
+  /// **'Your response has been recorded.\nWe look forward to celebrating with you!'**
+  String get rsvpResponseRecorded;
+
+  /// No description provided for @rsvpEventDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Astana  •  June 2026'**
+  String get rsvpEventDate;
+
+  /// No description provided for @navOurStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Story'**
+  String get navOurStory;
+
+  /// No description provided for @navDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get navDetails;
+
+  /// No description provided for @navDressCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dress Code'**
+  String get navDressCode;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

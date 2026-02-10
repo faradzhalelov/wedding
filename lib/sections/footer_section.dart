@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wedding/utils/extentions.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -10,6 +11,7 @@ class FooterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -21,7 +23,7 @@ class FooterSection extends StatelessWidget {
         children: [
           // Logo
           Text(
-            'R & F',
+            'F & R',
             style: GoogleFonts.playfairDisplay(
               fontSize: 28,
               fontWeight: FontWeight.w500,
@@ -30,7 +32,7 @@ class FooterSection extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'ASTANA \u2022 2025',
+            '${l10n.astanaCity} \u2022 2025',
             style: AppTextStyles.bodySmall.copyWith(
               letterSpacing: 3,
               color: AppColors.neutral500,
@@ -50,7 +52,7 @@ class FooterSection extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           Text(
-            'Designed with love for Riza & Farkhat',
+            l10n.designedWithLove,
             style: AppTextStyles.bodySmall.copyWith(
               color: AppColors.neutral400,
             ),

@@ -7,6 +7,7 @@ import 'sections/event_details_section.dart';
 import 'sections/dress_code_section.dart';
 import 'sections/rsvp_section.dart';
 import 'sections/footer_section.dart';
+import 'utils/extentions.dart';
 
 /// Single scroll landing page composing all sections.
 /// Uses GlobalKey + ScrollController for smooth scroll navigation.
@@ -48,11 +49,14 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  List<NavItem> get _navItems => [
-        NavItem('Our Story', () => _scrollToSection(_galleryKey)),
-        NavItem('Details', () => _scrollToSection(_detailsKey)),
-        NavItem('Dress Code', () => _scrollToSection(_dressCodeKey)),
-      ];
+  List<NavItem> get _navItems {
+    final l10n = context.localization;
+    return [
+      NavItem(l10n.navOurStory, () => _scrollToSection(_galleryKey)),
+      NavItem(l10n.navDetails, () => _scrollToSection(_detailsKey)),
+      NavItem(l10n.navDressCode, () => _scrollToSection(_dressCodeKey)),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +70,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // Top padding for sticky navbar
                 const SizedBox(height: 72),
-                _Section(key: _heroKey, child: HeroSection(
-                  onConfirmTap: () => _scrollToSection(_rsvpKey),
-                )),
+                _Section(
+                  key: _heroKey,
+                  child: HeroSection(
+                    onConfirmTap: () => _scrollToSection(_rsvpKey),
+                  ),
+                ),
                 _Section(key: _galleryKey, child: const GallerySection()),
                 _Section(key: _detailsKey, child: const EventDetailsSection()),
                 _Section(key: _dressCodeKey, child: const DressCodeSection()),

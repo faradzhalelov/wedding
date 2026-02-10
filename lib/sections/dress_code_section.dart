@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wedding/utils/extentions.dart';
 
-import '../l10n/app_localizations.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import '../widgets/fade_in_on_scroll.dart';
@@ -96,7 +96,7 @@ class _DressCodeHero extends StatelessWidget {
 class _Label extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -117,7 +117,7 @@ class _Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -146,7 +146,7 @@ class _Title extends StatelessWidget {
 class _Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 500),
       child: Text(l10n.dressCodeDescription, style: AppTextStyles.bodyLarge),
@@ -157,7 +157,7 @@ class _Description extends StatelessWidget {
 class _ColorPalette extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     final colors = [
       (l10n.colorBlack, Colors.black),
       (l10n.colorGrey, const Color(0xFF6B7280)),
@@ -240,7 +240,7 @@ class _GuidelinesGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     final guidelines = [
       (
         Icons.palette_outlined,
@@ -368,7 +368,7 @@ class _InspirationGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -605,7 +605,7 @@ class _DosAndDonts extends StatelessWidget {
 class _DoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     final items = [l10n.doItem1, l10n.doItem2, l10n.doItem3, l10n.doItem4];
 
     return Column(
@@ -665,7 +665,7 @@ class _DoList extends StatelessWidget {
 class _DontList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = context.localization;
     final items = [
       l10n.dontItem1,
       l10n.dontItem2,

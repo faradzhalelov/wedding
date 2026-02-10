@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wedding/utils/extentions.dart';
 
+import '../l10n/app_localizations.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import '../widgets/responsive_builder.dart';
@@ -46,10 +48,12 @@ class _HeroSectionState extends State<HeroSection>
       return Tween<Offset>(
         begin: const Offset(0, 20),
         end: Offset.zero,
-      ).animate(CurvedAnimation(
-        parent: _fadeController,
-        curve: Interval(start, end, curve: Curves.easeOutCubic),
-      ));
+      ).animate(
+        CurvedAnimation(
+          parent: _fadeController,
+          curve: Interval(start, end, curve: Curves.easeOutCubic),
+        ),
+      );
     });
 
     _fadeController.forward();
@@ -65,6 +69,7 @@ class _HeroSectionState extends State<HeroSection>
   Widget build(BuildContext context) {
     final screen = screenSizeOf(context);
     final isMobile = screen == ScreenSize.mobile;
+    final l10n = context.localization;
 
     return ClipRect(
       child: SizedBox(
@@ -98,7 +103,7 @@ class _HeroSectionState extends State<HeroSection>
                           ),
                         ),
                         child: Text(
-                          'THE WEDDING CELEBRATION',
+                          l10n!.heroEyebrow,
                           style: AppTextStyles.label.copyWith(
                             color: AppColors.primary.withValues(alpha: 0.8),
                             fontSize: 11,
@@ -115,7 +120,8 @@ class _HeroSectionState extends State<HeroSection>
                       child: Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: 'Riza '),
+                            TextSpan(text: 'Farkhat '),
+                            
                             TextSpan(
                               text: '& ',
                               style: GoogleFonts.playfairDisplay(
@@ -124,7 +130,7 @@ class _HeroSectionState extends State<HeroSection>
                                 color: AppColors.primary,
                               ),
                             ),
-                            TextSpan(text: 'Farkhat'),
+                            TextSpan(text: 'Riza'),
                           ],
                         ),
                         style: isMobile
@@ -145,7 +151,7 @@ class _HeroSectionState extends State<HeroSection>
                         runSpacing: 8,
                         children: [
                           Text(
-                            'ASTANA, KAZAKHSTAN',
+                            l10n!.heroLocation,
                             style: AppTextStyles.navLink.copyWith(
                               color: AppColors.neutral500,
                               letterSpacing: 2,
@@ -157,7 +163,7 @@ class _HeroSectionState extends State<HeroSection>
                             color: AppColors.neutral200,
                           ),
                           Text(
-                            'JUNE 2025',
+                            l10n!.heroDate,
                             style: AppTextStyles.navLink.copyWith(
                               color: AppColors.neutral500,
                               letterSpacing: 2,
@@ -243,7 +249,8 @@ class _BlobPainter extends CustomPainter {
     );
   }
 
-  void _drawBlob(Canvas canvas, {
+  void _drawBlob(
+    Canvas canvas, {
     required Offset center,
     required double radius,
     required Color color,
@@ -274,6 +281,7 @@ class _HeroImageState extends State<_HeroImage> {
   Widget build(BuildContext context) {
     final width = widget.isMobile ? 280.0 : 520.0;
     final height = widget.isMobile ? 360.0 : 340.0;
+    final l10n = context.localization;
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -309,7 +317,11 @@ class _HeroImageState extends State<_HeroImage> {
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => Container(
                   color: AppColors.neutral100,
-                  child: const Icon(Icons.image, size: 48, color: AppColors.neutral400),
+                  child: const Icon(
+                    Icons.image,
+                    size: 48,
+                    color: AppColors.neutral400,
+                  ),
                 ),
               ),
             ),
@@ -342,7 +354,7 @@ class _HeroImageState extends State<_HeroImage> {
                     ),
                   ),
                   child: Text(
-                    'Save the Date',
+                    l10n!.heroSaveTheDate,
                     style: AppTextStyles.body.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
@@ -372,6 +384,7 @@ class _ConfirmButtonState extends State<_ConfirmButton> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
@@ -386,7 +399,7 @@ class _ConfirmButtonState extends State<_ConfirmButton> {
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(
-            'CONFIRM ATTENDANCE',
+            l10n.heroConfirmButton,
             style: AppTextStyles.button.copyWith(letterSpacing: 2),
           ),
         ),

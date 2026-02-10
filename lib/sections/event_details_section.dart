@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedding/utils/extentions.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
@@ -29,9 +30,9 @@ class EventDetailsSection extends StatelessWidget {
             maxWidth: 1100,
             child: isMobile ? _MobileLayout() : _DesktopLayout(),
           ),
-          SizedBox(height: isMobile ? 48 : 80),
+          //SizedBox(height: isMobile ? 48 : 80),
           // CTA
-          FadeInOnScroll(child: _CtaSection()),
+         // FadeInOnScroll(child: _CtaSection()),
         ],
       ),
     );
@@ -44,10 +45,11 @@ class _DateHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Column(
       children: [
         Text(
-          'THE CELEBRATION',
+          l10n.theCelebration,
           style: AppTextStyles.label.copyWith(letterSpacing: 3),
         ),
         const SizedBox(height: 24),
@@ -57,7 +59,7 @@ class _DateHero extends StatelessWidget {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Text(
-              'June',
+              l10n.monthJune,
               style: AppTextStyles.heroDisplay.copyWith(
                 fontSize: isMobile ? 48 : 80,
                 fontWeight: FontWeight.w200,
@@ -70,13 +72,13 @@ class _DateHero extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  '24th',
+                  l10n.day24th,
                   style: AppTextStyles.heading2.copyWith(
                     fontSize: isMobile ? 32 : 48,
                   ),
                 ),
                 Text(
-                  '2025',
+                  l10n.year2025,
                   style: AppTextStyles.bodyLarge.copyWith(
                     color: AppColors.textSecondary,
                     fontSize: isMobile ? 16 : 20,
@@ -103,13 +105,13 @@ class _DateHero extends StatelessWidget {
             children: [
               _InfoCard(
                 icon: Icons.location_on_outlined,
-                title: 'Astana, Kazakhstan',
-                subtitle: 'The Capital City',
+                title: l10n.locationAstana,
+                subtitle: l10n.locationSubtitle,
               ),
               _InfoCard(
                 icon: Icons.storefront_outlined,
-                title: 'The Guest House',
-                subtitle: 'Main Ballroom',
+                title: l10n.venueGuestHouse,
+                subtitle: l10n.venueMainBallroom,
               ),
             ],
           ),
@@ -192,6 +194,7 @@ class _CalendarButtonState extends State<_CalendarButton> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
@@ -229,7 +232,7 @@ class _CalendarButtonState extends State<_CalendarButton> {
               ),
               const SizedBox(width: 10),
               Text(
-                'Add to Calendar',
+                l10n.addToCalendar,
                 style: AppTextStyles.body.copyWith(
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
@@ -251,9 +254,9 @@ class _DesktopLayout extends StatelessWidget {
       children: [
         // Left: Map + directions
         Expanded(flex: 5, child: FadeInOnScroll(child: _MapCard())),
-        const SizedBox(width: 64),
-        // Right: Timeline
-        Expanded(flex: 7, child: _Timeline()),
+        // const SizedBox(width: 64),
+        // // Right: Timeline
+        // Expanded(flex: 7, child: _Timeline()),
       ],
     );
   }
@@ -265,8 +268,8 @@ class _MobileLayout extends StatelessWidget {
     return Column(
       children: [
         FadeInOnScroll(child: _MapCard()),
-        const SizedBox(height: 48),
-        _Timeline(),
+        //const SizedBox(height: 48),
+       // _Timeline(),
       ],
     );
   }
@@ -282,13 +285,14 @@ class _MapCardState extends State<_MapCard> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Getting There', style: AppTextStyles.heading2),
+        Text(l10n.gettingThere, style: AppTextStyles.heading2),
         const SizedBox(height: 12),
         Text(
-          'The Guest House is located in the heart of Astana. Valet parking will be complimentary.',
+          l10n.gettingThereDesc,
           style: AppTextStyles.bodyLarge.copyWith(
             color: AppColors.textSecondary,
           ),
@@ -380,7 +384,7 @@ class _MapCardState extends State<_MapCard> {
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Text(
-                            'Venue',
+                            l10n.venue,
                             style: AppTextStyles.label.copyWith(fontSize: 11),
                           ),
                         ),
@@ -414,7 +418,7 @@ class _MapCardState extends State<_MapCard> {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'Get Directions',
+                            l10n.getDirections,
                             style: AppTextStyles.body.copyWith(
                               fontWeight: FontWeight.w700,
                               color: AppColors.textPrimary,
@@ -435,66 +439,63 @@ class _MapCardState extends State<_MapCard> {
 }
 
 class _Timeline extends StatelessWidget {
-  static const _events = [
-    _TimelineEvent(
-      time: '16:00',
-      icon: Icons.groups_outlined,
-      tag: 'Arrival',
-      title: 'Welcome Gathering',
-      description:
-          'Guests arrive. Light refreshments and cocktails will be served in the garden foyer.',
-    ),
-    _TimelineEvent(
-      time: '17:00',
-      icon: Icons.favorite_outline,
-      tag: 'Main Event',
-      title: 'The Ceremony',
-      description:
-          'We say "I do" in the Grand Hall. Please be seated by 16:45.',
-    ),
-    _TimelineEvent(
-      time: '18:00',
-      icon: Icons.restaurant_outlined,
-      tag: 'Reception',
-      title: 'Dinner & Toasts',
-      description:
-          'A three-course dinner featuring local delicacies, followed by speeches from family and friends.',
-    ),
-    _TimelineEvent(
-      time: '20:00',
-      icon: Icons.queue_music_outlined,
-      tag: 'Party',
-      title: 'Dancing',
-      description:
-          'Live music performance followed by a DJ set until midnight.',
-    ),
-    _TimelineEvent(
-      time: '23:00',
-      icon: Icons.auto_awesome_outlined,
-      tag: 'Finale',
-      title: 'Farewell',
-      description: 'Sparkler send-off for the newlyweds.',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
+    final events = [
+      _TimelineEvent(
+        time: l10n.event1Time,
+        icon: Icons.groups_outlined,
+        tag: l10n.event1Tag,
+        title: l10n.event1Title,
+        description: l10n.event1Desc,
+      ),
+      _TimelineEvent(
+        time: l10n.event2Time,
+        icon: Icons.favorite_outline,
+        tag: l10n.event2Tag,
+        title: l10n.event2Title,
+        description: l10n.event2Desc,
+      ),
+      _TimelineEvent(
+        time: l10n.event3Time,
+        icon: Icons.restaurant_outlined,
+        tag: l10n.event3Tag,
+        title: l10n.event3Title,
+        description: l10n.event3Desc,
+      ),
+      _TimelineEvent(
+        time: l10n.event4Time,
+        icon: Icons.queue_music_outlined,
+        tag: l10n.event4Tag,
+        title: l10n.event4Title,
+        description: l10n.event4Desc,
+      ),
+      _TimelineEvent(
+        time: l10n.event5Time,
+        icon: Icons.auto_awesome_outlined,
+        tag: l10n.event5Tag,
+        title: l10n.event5Title,
+        description: l10n.event5Desc,
+      ),
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Order of Events', style: AppTextStyles.heading2),
+        Text(l10n.orderOfEvents, style: AppTextStyles.heading2),
         const SizedBox(height: 8),
         Text(
-          'A guide to our special day.',
+          l10n.orderOfEventsDesc,
           style: AppTextStyles.body.copyWith(color: AppColors.textSecondary),
         ),
         const SizedBox(height: 40),
-        for (int i = 0; i < _events.length; i++)
+        for (int i = 0; i < events.length; i++)
           FadeInOnScroll(
             delay: Duration(milliseconds: 100 * i),
             child: _TimelineItem(
-              event: _events[i],
-              isLast: i == _events.length - 1,
+              event: events[i],
+              isLast: i == events.length - 1,
             ),
           ),
       ],
@@ -645,6 +646,7 @@ class _TimelineItemState extends State<_TimelineItem> {
 class _CtaSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.localization;
     return Container(
       width: double.infinity,
       color: Colors.white,
@@ -658,12 +660,12 @@ class _CtaSection extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            'Can you make it?',
+            l10n.canYouMakeIt,
             style: AppTextStyles.heading2.copyWith(fontSize: 36),
           ),
           const SizedBox(height: 12),
           Text(
-            'We would be honored to have you celebrate with us.',
+            l10n.honoredToHaveYou,
             style: AppTextStyles.bodyLarge.copyWith(
               color: AppColors.textSecondary,
             ),

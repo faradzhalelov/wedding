@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
+import '../utils/extentions.dart';
 import '../widgets/responsive_builder.dart';
 
 class NavItem {
@@ -89,7 +90,7 @@ class _Logo extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         Text(
-          'R',
+          'F',
           style: GoogleFonts.playfairDisplay(
             fontSize: 22,
             fontWeight: FontWeight.w600,
@@ -105,7 +106,7 @@ class _Logo extends StatelessWidget {
           ),
         ),
         Text(
-          'F',
+          'R',
           style: GoogleFonts.playfairDisplay(
             fontSize: 22,
             fontWeight: FontWeight.w600,
@@ -189,7 +190,7 @@ class _RsvpButtonState extends State<_RsvpButton> {
             ],
           ),
           child: Text(
-            'RSVP NOW',
+            context.localization.navRsvpButton,
             style: AppTextStyles.button.copyWith(letterSpacing: 2),
           ),
         ),
@@ -262,7 +263,10 @@ class _MobileMenuButton extends StatelessWidget {
                           Navigator.pop(ctx);
                           onRsvpTap();
                         },
-                        child: Text('RSVP NOW', style: AppTextStyles.button),
+                        child: Text(
+                          context.localization.navRsvpButton,
+                          style: AppTextStyles.button,
+                        ),
                       ),
                     ),
                   ],
