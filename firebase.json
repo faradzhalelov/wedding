@@ -1,1 +1,25 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"authsfera","configurations":{"web":"1:659579733499:web:8f23ae9d478c3bb92ab75e"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "authsfera",
+          "configurations": {
+            "web": "1:659579733499:web:8f23ae9d478c3bb92ab75e"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
+  }
+}

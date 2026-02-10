@@ -19,7 +19,7 @@ class RsvpSection extends StatefulWidget {
 class _RsvpSectionState extends State<RsvpSection> {
   final _formKey = GlobalKey<FormState>();
   bool _attending = true;
-  int _guestCount = 2;
+  int _guestCount = 1;
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _dietaryController = TextEditingController();
@@ -159,50 +159,50 @@ class _RsvpSectionState extends State<RsvpSection> {
                                 onChanged: (v) =>
                                     setState(() => _guestCount = v),
                               ),
-                              const SizedBox(height: 28),
-                              // Dietary
-                              _FormLabel(l10n.rsvpDietaryRequirements),
-                              const SizedBox(height: 8),
-                              TextFormField(
-                                controller: _dietaryController,
-                                maxLines: 3,
-                                decoration: InputDecoration(
-                                  hintText: l10n.rsvpAllergies,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                l10n.rsvpAccommodate,
-                                style: AppTextStyles.bodySmall.copyWith(
-                                  color: AppColors.neutral400,
-                                ),
-                              ),
+                              //const SizedBox(height: 14),
+                              // // Dietary
+                              // _FormLabel(l10n.rsvpDietaryRequirements),
+                              // const SizedBox(height: 8),
+                              // TextFormField(
+                              //   controller: _dietaryController,
+                              //   maxLines: 3,
+                              //   decoration: InputDecoration(
+                              //     hintText: l10n.rsvpAllergies,
+                              //   ),
+                              // ),
+                              // const SizedBox(height: 4),
+                              // Text(
+                              //   l10n.rsvpAccommodate,
+                              //   style: AppTextStyles.bodySmall.copyWith(
+                              //     color: AppColors.neutral400,
+                              //   ),
+                              // ),
                             ],
                           )
                         : const SizedBox.shrink(),
                   ),
                   const SizedBox(height: 28),
                   // Email
-                  _FormLabel(l10n.rsvpYourEmail),
-                  const SizedBox(height: 8),
-                  TextFormField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      hintText: l10n.rsvpEmailPlaceholder,
-                      prefixIcon: const Icon(Icons.mail_outline, size: 20),
-                    ),
-                    validator: (v) {
-                      if (v == null || v.trim().isEmpty) {
-                        return l10n.rsvpPleaseEnterEmail;
-                      }
-                      if (!v.contains('@') || !v.contains('.')) {
-                        return l10n.rsvpValidEmail;
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 32),
+                  // _FormLabel(l10n.rsvpYourEmail),
+                  // const SizedBox(height: 8),
+                  // TextFormField(
+                  //   controller: _emailController,
+                  //   keyboardType: TextInputType.emailAddress,
+                  //   decoration: InputDecoration(
+                  //     hintText: l10n.rsvpEmailPlaceholder,
+                  //     prefixIcon: const Icon(Icons.mail_outline, size: 20),
+                  //   ),
+                  //   validator: (v) {
+                  //     if (v == null || v.trim().isEmpty) {
+                  //       return l10n.rsvpPleaseEnterEmail;
+                  //     }
+                  //     if (!v.contains('@') || !v.contains('.')) {
+                  //       return l10n.rsvpValidEmail;
+                  //     }
+                  //     return null;
+                  //   },
+                  // ),
+                  //const SizedBox(height: 32),
                   // Divider
                   Container(height: 1, color: AppColors.neutral200),
                   const SizedBox(height: 24),

@@ -312,8 +312,8 @@ class _HeroImageState extends State<_HeroImage> {
               scale: _hovered ? 1.05 : 1.0,
               duration: const Duration(milliseconds: 700),
               curve: Curves.easeOut,
-              child: Image.network(
-                'https://lh3.googleusercontent.com/aida-public/AB6AXuB4T7u5g9GjaDQzvcRBPpmVjfDrENYE3HV79LY4LpRXb3pMnLDoGdLvozEnk-vma7CTy_-MNufM8ZEXxv3NYGy00EAg_uhH1KytoAWtkmCvx_L6xiT2qxyA_HocSeKVPzJZLEcWvplanSzPNBq-fOhvpoT2sxWShijlh2L5FqcY0AvCJna9OcGi7VGzutNy1omRgsNq8zRdPgce_VMTLfX18q3aaoh_4zj5JBNN6zl6BogBBH_divfiMCS_fXFZANVcKq2CyqtbyB0',
+              child: Image.asset(
+                'assets/webp/sea.webp',
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => Container(
                   color: AppColors.neutral100,
@@ -354,7 +354,7 @@ class _HeroImageState extends State<_HeroImage> {
                     ),
                   ),
                   child: Text(
-                    l10n!.heroSaveTheDate,
+                    l10n.heroSaveTheDate,
                     style: AppTextStyles.body.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,

@@ -44,3 +44,10 @@ flutter:
   uses-material-design: true
 
   generate: true
+
+  assets:
+    - assets/webp/
+    - assets/png/
+    - assets/logo/
+    - assets/icon/
+    - assets/doc/
