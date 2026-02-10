@@ -1,0 +1,16 @@
+{
+  "fara": {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемые Фархат и Риза",
+    "name": "Farkhat",
+    "responded": false
+  },
+  "askar": {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Аскар",
+    "name": "Askar",
+    "responded": false
+  }
+}
