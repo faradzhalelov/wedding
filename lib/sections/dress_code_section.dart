@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import '../widgets/fade_in_on_scroll.dart';
@@ -23,9 +24,7 @@ class DressCodeSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Hero heading + palette
-            FadeInOnScroll(
-              child: _DressCodeHero(isMobile: isMobile),
-            ),
+            FadeInOnScroll(child: _DressCodeHero(isMobile: isMobile)),
             SizedBox(height: isMobile ? 40 : 64),
             // Guidelines grid
             FadeInOnScroll(
@@ -97,13 +96,14 @@ class _DressCodeHero extends StatelessWidget {
 class _Label extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(width: 48, height: 1, color: AppColors.primary),
         const SizedBox(width: 12),
         Text(
-          'DRESS CODE',
+          l10n.dressCodeLabel,
           style: AppTextStyles.label.copyWith(letterSpacing: 3),
         ),
       ],
@@ -117,18 +117,19 @@ class _Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Smart Casual',
+          l10n.smartCasual,
           style: AppTextStyles.heading1.copyWith(
             fontSize: isMobile ? 40 : 64,
             letterSpacing: -1.5,
           ),
         ),
         Text(
-          'Free Classic Style',
+          l10n.freeClassicStyle,
           style: AppTextStyles.heading1.copyWith(
             fontSize: isMobile ? 40 : 64,
             fontWeight: FontWeight.w300,
@@ -145,28 +146,25 @@ class _Title extends StatelessWidget {
 class _Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 500),
-      child: Text(
-        'We invite you to join us in an atmosphere of modern elegance. '
-        'Think clean lines, monochrome palettes, and sophisticated comfort '
-        'suitable for our urban Astana celebration.',
-        style: AppTextStyles.bodyLarge,
-      ),
+      child: Text(l10n.dressCodeDescription, style: AppTextStyles.bodyLarge),
     );
   }
 }
 
 class _ColorPalette extends StatelessWidget {
-  static const _colors = [
-    ('Black', Colors.black),
-    ('Grey', Color(0xFF6B7280)),
-    ('White', Colors.white),
-    ('Red Accent', AppColors.primary),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final colors = [
+      (l10n.colorBlack, Colors.black),
+      (l10n.colorGrey, const Color(0xFF6B7280)),
+      (l10n.colorWhite, Colors.white),
+      (l10n.colorRed, AppColors.primary),
+    ];
+
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
@@ -185,7 +183,7 @@ class _ColorPalette extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'PALETTE',
+            l10n.paletteLabel,
             style: AppTextStyles.bodySmall.copyWith(
               fontWeight: FontWeight.w700,
               letterSpacing: 2,
@@ -196,18 +194,18 @@ class _ColorPalette extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              for (final (name, color) in _colors) ...[
+              for (int i = 0; i < colors.length; i++) ...[
                 Column(
                   children: [
                     Container(
                       width: 48,
                       height: 48,
                       decoration: BoxDecoration(
-                        color: color,
+                        color: colors[i].$2,
                         shape: BoxShape.circle,
                         border: Border.all(
                           color: AppColors.neutral200,
-                          width: color == Colors.white ? 1 : 0,
+                          width: colors[i].$2 == Colors.white ? 1 : 0,
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -219,14 +217,14 @@ class _ColorPalette extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      name,
+                      colors[i].$1,
                       style: AppTextStyles.bodySmall.copyWith(
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
                 ),
-                if (name != 'Red Accent') const SizedBox(width: 20),
+                if (i < colors.length - 1) const SizedBox(width: 20),
               ],
             ],
           ),
@@ -240,27 +238,37 @@ class _GuidelinesGrid extends StatelessWidget {
   const _GuidelinesGrid({required this.isMobile});
   final bool isMobile;
 
-  static const _guidelines = [
-    (Icons.palette_outlined, 'Monochrome',
-        'Stick to black, white, grey, or muted earth tones. We are aiming for a cohesive, editorial vibe for our wedding photos.'),
-    (Icons.checkroom_outlined, 'Modern Silhouettes',
-        'Opt for tailored suits, slip dresses, and structured blazers. Clean lines over complex patterns.'),
-    (Icons.accessibility_new_outlined, 'Comfortable Elegance',
-        'Look sharp but feel free to move. No stiff tuxedos required. Smart casual means polished but relaxed.'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final guidelines = [
+      (
+        Icons.palette_outlined,
+        l10n.guidelineMonochromeTitle,
+        l10n.guidelineMonochromeDesc,
+      ),
+      (
+        Icons.checkroom_outlined,
+        l10n.guidelineModernTitle,
+        l10n.guidelineModernDesc,
+      ),
+      (
+        Icons.accessibility_new_outlined,
+        l10n.guidelineComfortTitle,
+        l10n.guidelineComfortDesc,
+      ),
+    ];
+
     if (isMobile) {
       return Column(
         children: [
-          for (int i = 0; i < _guidelines.length; i++) ...[
+          for (int i = 0; i < guidelines.length; i++) ...[
             _GuidelineCard(
-              icon: _guidelines[i].$1,
-              title: _guidelines[i].$2,
-              description: _guidelines[i].$3,
+              icon: guidelines[i].$1,
+              title: guidelines[i].$2,
+              description: guidelines[i].$3,
             ),
-            if (i < _guidelines.length - 1) const SizedBox(height: 16),
+            if (i < guidelines.length - 1) const SizedBox(height: 16),
           ],
         ],
       );
@@ -269,15 +277,15 @@ class _GuidelinesGrid extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        for (int i = 0; i < _guidelines.length; i++) ...[
+        for (int i = 0; i < guidelines.length; i++) ...[
           Expanded(
             child: _GuidelineCard(
-              icon: _guidelines[i].$1,
-              title: _guidelines[i].$2,
-              description: _guidelines[i].$3,
+              icon: guidelines[i].$1,
+              title: guidelines[i].$2,
+              description: guidelines[i].$3,
             ),
           ),
-          if (i < _guidelines.length - 1) const SizedBox(width: 20),
+          if (i < guidelines.length - 1) const SizedBox(width: 20),
         ],
       ],
     );
@@ -314,7 +322,9 @@ class _GuidelineCardState extends State<_GuidelineCard> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppColors.neutral200.withValues(alpha: 0.5)),
+          border: Border.all(
+            color: AppColors.neutral200.withValues(alpha: 0.5),
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: _hovered ? 0.08 : 0.03),
@@ -356,26 +366,22 @@ class _InspirationGrid extends StatelessWidget {
   const _InspirationGrid({required this.isMobile});
   final bool isMobile;
 
-  static const _items = [
-    ('https://lh3.googleusercontent.com/aida-public/AB6AXuDAhr5coY5thTSoytSWKCJ3iXG8pBJljncofYyk2c0uQqulM5H3OVls8e0T48IoHUhxGQG8xkWomzHF1_EAejQUX7xl3EX_pS1JznMd7aRwu1kw_TK8H7I6H111dNZnH9wss8rZsnB3wYy-x3uTPTeCuLHqTT5MDQS33YyIgg28kxwLTjE6LE4WVP5c1wQ-9TB82RchfiWlMoLts530DAmp8e-3bvRApdVnnCInfoDeY3X8M2M9aaKch6ryQShvF8qJzIGL3zem5OU', "Men's Tailoring"),
-    ('https://lh3.googleusercontent.com/aida-public/AB6AXuCUJZTwURCY81YRcgIH46Jt0xlddT1MUVY30qQL749ozcpUIfthGfQib1VsrZzoFQwC5Q2BuWPW7Cy5VRLfHbO1J742QMk-pheD5M30xcooe1pETrQhbjh53jBgHfN8jjBm2s34X9T4hELI1kDlRYA1Emlxmzc92Eclsx9XMsmyZZwtVci-y_F7VjJtpIR58qyqr5HqY5KrK6oOPA0OU_DDncJrS0iIHom-UT2FOQ8RsT29QRQ54LC0LLeBKnjAyqLUGh3dfaV92EU', 'Minimalist Silhouettes'),
-    ('https://lh3.googleusercontent.com/aida-public/AB6AXuCkgtXhZg8p3TAtr68UzPPd7XXRfkghvzJrUxlmC2u-Ki7Rp-THq3iafiBiJMo1oQd3Jl4utweH_CjVYep1qq4JgBaKIX_e2dOMvfHXN0lvsm3-73Fh8qXRutthjoVFU3nNzN69tSSg2ivzREBa1tUCamUF1ooZNhRn4wioe1mcwqQ-q44hpWR2HrFhAFvLeegrw-cZCZhbLXj84G8B46n84vAE4n_06nR7uUfZwi7g9hucS1DqHI7tCaaGFQakZQoAeNn5ATfn9I4', 'Polished Footwear'),
-    ('https://lh3.googleusercontent.com/aida-public/AB6AXuAWSEwf5FfAwg33NUG31KaChH5K1xVbXSfBK6sXGhCrqByOUsVhQkYKVBch2Z9ygsRC5Q5gc8LjUs9_Wm3PG-rZpALnSIf19OMCKb12Uc7TfBz86ntwxHy6y9UBsO9nmmEXz_KhvzPETXs096nT5m9JzanmnTKFyEJemyTgSs4NmFlwZIqFAqg19OkkYdQlnzq-J-bCnz17KkDwVtS_NRc-pv8MYsyFFwy_b5ZFPUPgKV3_WXTfRtiKOQhAvA0KFbZgKF6qpMfXy6U', 'Modern Elegance'),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text('The Aesthetic', style: AppTextStyles.heading2),
+            Text(l10n.aestheticTitle, style: AppTextStyles.heading2),
             const Spacer(),
             if (!isMobile)
               Text(
-                'Curated Inspiration',
-                style: AppTextStyles.bodySmall.copyWith(color: AppColors.neutral500),
+                l10n.inspirationSubtitle,
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.neutral500,
+                ),
               ),
           ],
         ),
@@ -386,29 +392,67 @@ class _InspirationGrid extends StatelessWidget {
           margin: const EdgeInsets.only(top: 16, bottom: 24),
         ),
         if (isMobile)
-          _MobileInspirationList()
+          _MobileInspirationList(
+            items: [
+              (
+                l10n.inspirationMensTailoring,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuDAhr5coY5thTSoytSWKCJ3iXG8pBJljncofYyk2c0uQqulM5H3OVls8e0T48IoHUhxGQG8xkWomzHF1_EAejQUX7xl3EX_pS1JznMd7aRwu1kw_TK8H7I6H111dNZnH9wss8rZsnB3wYy-x3uTPTeCuLHqTT5MDQS33YyIgg28kxwLTjE6LE4WVP5c1wQ-9TB82RchfiWlMoLts530DAmp8e-3bvRApdVnnCInfoDeY3X8M2M9aaKch6ryQShvF8qJzIGL3zem5OU',
+              ),
+              (
+                l10n.inspirationMinimalist,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuCUJZTwURCY81YRcgIH46Jt0xlddT1MUVY30qQL749ozcpUIfthGfQib1VsrZzoFQwC5Q2BuWPW7Cy5VRLfHbO1J742QMk-pheD5M30xcooe1pETrQhbjh53jBgHfN8jjBm2s34X9T4hELI1kDlRYA1Emlxmzc92Eclsx9XMsmyZZwtVci-y_F7VjJtpIR58qyqr5HqY5KrK6oOPA0OU_DDncJrS0iIHom-UT2FOQ8RsT29QRQ54LC0LLeBKnjAyqLUGh3dfaV92EU',
+              ),
+              (
+                l10n.inspirationFootwear,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuCkgtXhZg8p3TAtr68UzPPd7XXRfkghvzJrUxlmC2u-Ki7Rp-THq3iafiBiJMo1oQd3Jl4utweH_CjVYep1qq4JgBaKIX_e2dOMvfHXN0lvsm3-73Fh8qXRutthjoVFU3nNzN69tSSg2ivzREBa1tUCamUF1ooZNhRn4wioe1mcwqQ-q44hpWR2HrFhAFvLeegrw-cZCZhbLXj84G8B46n84vAE4n_06nR7uUfZwi7g9hucS1DqHI7tCaaGFQakZQoAeNn5ATfn9I4',
+              ),
+              (
+                l10n.inspirationModern,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuAWSEwf5FfAwg33NUG31KaChH5K1xVbXSfBK6sXGhCrqByOUsVhQkYKVBch2Z9ygsRC5Q5gc8LjUs9_Wm3PG-rZpALnSIf19OMCKb12Uc7TfBz86ntwxHy6y9UBsO9nmmEXz_KhvzPETXs096nT5m9JzanmnTKFyEJemyTgSs4NmFlwZIqFAqg19OkkYdQlnzq-J-bCnz17KkDwVtS_NRc-pv8MYsyFFwy_b5ZFPUPgKV3_WXTfRtiKOQhAvA0KFbZgKF6qpMfXy6U',
+              ),
+            ],
+          )
         else
-          _DesktopInspirationGrid(),
+          _DesktopInspirationGrid(
+            items: [
+              (
+                l10n.inspirationMensTailoring,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuDAhr5coY5thTSoytSWKCJ3iXG8pBJljncofYyk2c0uQqulM5H3OVls8e0T48IoHUhxGQG8xkWomzHF1_EAejQUX7xl3EX_pS1JznMd7aRwu1kw_TK8H7I6H111dNZnH9wss8rZsnB3wYy-x3uTPTeCuLHqTT5MDQS33YyIgg28kxwLTjE6LE4WVP5c1wQ-9TB82RchfiWlMoLts530DAmp8e-3bvRApdVnnCInfoDeY3X8M2M9aaKch6ryQShvF8qJzIGL3zem5OU',
+              ),
+              (
+                l10n.inspirationMinimalist,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuCUJZTwURCY81YRcgIH46Jt0xlddT1MUVY30qQL749ozcpUIfthGfQib1VsrZzoFQwC5Q2BuWPW7Cy5VRLfHbO1J742QMk-pheD5M30xcooe1pETrQhbjh53jBgHfN8jjBm2s34X9T4hELI1kDlRYA1Emlxmzc92Eclsx9XMsmyZZwtVci-y_F7VjJtpIR58qyqr5HqY5KrK6oOPA0OU_DDncJrS0iIHom-UT2FOQ8RsT29QRQ54LC0LLeBKnjAyqLUGh3dfaV92EU',
+              ),
+              (
+                l10n.inspirationFootwear,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuCkgtXhZg8p3TAtr68UzPPd7XXRfkghvzJrUxlmC2u-Ki7Rp-THq3iafiBiJMo1oQd3Jl4utweH_CjVYep1qq4JgBaKIX_e2dOMvfHXN0lvsm3-73Fh8qXRutthjoVFU3nNzN69tSSg2ivzREBa1tUCamUF1ooZNhRn4wioe1mcwqQ-q44hpWR2HrFhAFvLeegrw-cZCZhbLXj84G8B46n84vAE4n_06nR7uUfZwi7g9hucS1DqHI7tCaaGFQakZQoAeNn5ATfn9I4',
+              ),
+              (
+                l10n.inspirationModern,
+                'https://lh3.googleusercontent.com/aida-public/AB6AXuAWSEwf5FfAwg33NUG31KaChH5K1xVbXSfBK6sXGhCrqByOUsVhQkYKVBch2Z9ygsRC5Q5gc8LjUs9_Wm3PG-rZpALnSIf19OMCKb12Uc7TfBz86ntwxHy6y9UBsO9nmmEXz_KhvzPETXs096nT5m9JzanmnTKFyEJemyTgSs4NmFlwZIqFAqg19OkkYdQlnzq-J-bCnz17KkDwVtS_NRc-pv8MYsyFFwy_b5ZFPUPgKV3_WXTfRtiKOQhAvA0KFbZgKF6qpMfXy6U',
+              ),
+            ],
+          ),
       ],
     );
   }
 }
 
 class _DesktopInspirationGrid extends StatelessWidget {
+  const _DesktopInspirationGrid({required this.items});
+  final List<(String, String)> items;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 360,
       child: Row(
         children: [
-          for (int i = 0; i < _InspirationGrid._items.length; i++) ...[
+          for (int i = 0; i < items.length; i++) ...[
             Expanded(
-              child: _InspirationCard(
-                url: _InspirationGrid._items[i].$1,
-                label: _InspirationGrid._items[i].$2,
-              ),
+              child: _InspirationCard(label: items[i].$1, url: items[i].$2),
             ),
-            if (i < _InspirationGrid._items.length - 1) const SizedBox(width: 16),
+            if (i < items.length - 1) const SizedBox(width: 16),
           ],
         ],
       ),
@@ -417,21 +461,21 @@ class _DesktopInspirationGrid extends StatelessWidget {
 }
 
 class _MobileInspirationList extends StatelessWidget {
+  const _MobileInspirationList({required this.items});
+  final List<(String, String)> items;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 280,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: _InspirationGrid._items.length,
+        itemCount: items.length,
         separatorBuilder: (_, __) => const SizedBox(width: 12),
         itemBuilder: (_, i) {
           return SizedBox(
             width: 200,
-            child: _InspirationCard(
-              url: _InspirationGrid._items[i].$1,
-              label: _InspirationGrid._items[i].$2,
-            ),
+            child: _InspirationCard(label: items[i].$1, url: items[i].$2),
           );
         },
       ),
@@ -458,9 +502,7 @@ class _InspirationCardState extends State<_InspirationCard> {
       onExit: (_) => setState(() => _hovered = false),
       child: Container(
         clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -472,17 +514,32 @@ class _InspirationCardState extends State<_InspirationCard> {
                 colorFilter: _hovered
                     ? const ColorFilter.mode(Colors.transparent, BlendMode.dst)
                     : const ColorFilter.matrix(<double>[
-                        0.2126, 0.7152, 0.0722, 0, 0,
-                        0.2126, 0.7152, 0.0722, 0, 0,
-                        0.2126, 0.7152, 0.0722, 0, 0,
-                        0,      0,      0,      1, 0,
+                        0.2126,
+                        0.7152,
+                        0.0722,
+                        0,
+                        0,
+                        0.2126,
+                        0.7152,
+                        0.0722,
+                        0,
+                        0,
+                        0.2126,
+                        0.7152,
+                        0.0722,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
                       ]),
                 child: Image.network(
                   widget.url,
                   fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => Container(
-                    color: AppColors.neutral100,
-                  ),
+                  errorBuilder: (_, __, ___) =>
+                      Container(color: AppColors.neutral100),
                 ),
               ),
             ),
@@ -531,11 +588,7 @@ class _DosAndDonts extends StatelessWidget {
       ),
       child: isMobile
           ? Column(
-              children: [
-                _DoList(),
-                const SizedBox(height: 32),
-                _DontList(),
-              ],
+              children: [_DoList(), const SizedBox(height: 32), _DontList()],
             )
           : Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -550,15 +603,11 @@ class _DosAndDonts extends StatelessWidget {
 }
 
 class _DoList extends StatelessWidget {
-  static const _items = [
-    'Wear Blazers, Loafers, Slip Dresses, and Jumpsuits.',
-    'Choose monochrome palettes (Black, White, Grey).',
-    'Opt for midi lengths, silk fabrics, and minimal jewelry.',
-    'Feel comfortable. Relaxed tailoring is encouraged.',
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final items = [l10n.doItem1, l10n.doItem2, l10n.doItem3, l10n.doItem4];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -567,7 +616,7 @@ class _DoList extends StatelessWidget {
             const Icon(Icons.check_circle, size: 20, color: AppColors.success),
             const SizedBox(width: 10),
             Text(
-              'PLEASE DO',
+              l10n.doListTitle,
               style: AppTextStyles.heading3.copyWith(
                 letterSpacing: 1.5,
                 fontSize: 16,
@@ -581,7 +630,7 @@ class _DoList extends StatelessWidget {
           color: AppColors.neutral200,
           margin: const EdgeInsets.symmetric(vertical: 16),
         ),
-        for (final item in _items)
+        for (final item in items)
           Padding(
             padding: const EdgeInsets.only(bottom: 16),
             child: Row(
@@ -600,7 +649,9 @@ class _DoList extends StatelessWidget {
                 Expanded(
                   child: Text(
                     item,
-                    style: AppTextStyles.body.copyWith(color: AppColors.neutral600),
+                    style: AppTextStyles.body.copyWith(
+                      color: AppColors.neutral600,
+                    ),
                   ),
                 ),
               ],
@@ -612,15 +663,16 @@ class _DoList extends StatelessWidget {
 }
 
 class _DontList extends StatelessWidget {
-  static const _items = [
-    'Wear Jeans, T-shirts, or Athletic Sneakers.',
-    'Wear Neon or overly bright colors.',
-    'Wear heavily patterned or branded clothing.',
-    'Feel pressured to wear a full tuxedo.',
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final items = [
+      l10n.dontItem1,
+      l10n.dontItem2,
+      l10n.dontItem3,
+      l10n.dontItem4,
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -629,7 +681,7 @@ class _DontList extends StatelessWidget {
             const Icon(Icons.cancel, size: 20, color: AppColors.primary),
             const SizedBox(width: 10),
             Text(
-              "PLEASE DON'T",
+              l10n.dontListTitle,
               style: AppTextStyles.heading3.copyWith(
                 letterSpacing: 1.5,
                 fontSize: 16,
@@ -643,7 +695,7 @@ class _DontList extends StatelessWidget {
           color: AppColors.neutral200,
           margin: const EdgeInsets.symmetric(vertical: 16),
         ),
-        for (final item in _items)
+        for (final item in items)
           Padding(
             padding: const EdgeInsets.only(bottom: 16),
             child: Row(
@@ -662,7 +714,9 @@ class _DontList extends StatelessWidget {
                 Expanded(
                   child: Text(
                     item,
-                    style: AppTextStyles.body.copyWith(color: AppColors.neutral600),
+                    style: AppTextStyles.body.copyWith(
+                      color: AppColors.neutral600,
+                    ),
                   ),
                 ),
               ],

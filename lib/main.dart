@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'l10n/app_localizations.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -12,10 +13,14 @@ class WeddingApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //final locale = ref.watch(localeProvider);
     return MaterialApp(
-      title: 'Riza & Farkhat — Wedding',
+      title: 'Farkhat & Riza — Wedding',
       debugShowCheckedModeBanner: false,
       theme: buildAppTheme(),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('ru'),
       home: const HomePage(),
     );
   }
