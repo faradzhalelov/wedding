@@ -305,13 +305,13 @@ class _MapCardState extends State<_MapCard> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(l10n.gettingThere, style: AppTextStyles.heading2),
-        const SizedBox(height: 12),
-        Text(
-          l10n.gettingThereDesc,
-          style: AppTextStyles.bodyLarge.copyWith(
-            color: AppColors.textSecondary,
-          ),
-        ),
+        // const SizedBox(height: 12),
+        // Text(
+        //   l10n.gettingThereDesc,
+        //   style: AppTextStyles.bodyLarge.copyWith(
+        //     color: AppColors.textSecondary,
+        //   ),
+        // ),
         const SizedBox(height: 24),
         MouseRegion(
           onEnter: (_) => setState(() => _hovered = true),

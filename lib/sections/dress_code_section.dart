@@ -37,12 +37,12 @@ class DressCodeSection extends StatelessWidget {
               delay: const Duration(milliseconds: 250),
               child: _InspirationGrid(isMobile: isMobile),
             ),
-            SizedBox(height: isMobile ? 40 : 64),
-            // Do's and Don'ts
-            FadeInOnScroll(
-              delay: const Duration(milliseconds: 350),
-              child: _DosAndDonts(isMobile: isMobile),
-            ),
+            // SizedBox(height: isMobile ? 40 : 64),
+            // // Do's and Don'ts
+            // FadeInOnScroll(
+            //   delay: const Duration(milliseconds: 350),
+            //   child: _DosAndDonts(isMobile: isMobile),
+            // ),
           ],
         ),
       ),

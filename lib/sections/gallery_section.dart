@@ -136,8 +136,8 @@ class _HeroRow extends StatelessWidget {
               letterSpacing: -1.5,
             ),
           ),
-          const SizedBox(height: 16),
-          Text(l10n.memoryDescMobile, style: AppTextStyles.bodyLarge),
+          // const SizedBox(height: 16),
+          // Text(l10n.memoryDescMobile, style: AppTextStyles.bodyLarge),
         ],
       );
     }
@@ -159,8 +159,8 @@ class _HeroRow extends StatelessWidget {
                   color: AppColors.neutral400,
                 ),
               ),
-              const SizedBox(height: 20),
-              Text(l10n.memoryDescDesktop, style: AppTextStyles.bodyLarge),
+              // const SizedBox(height: 20),
+              // Text(l10n.memoryDescDesktop, style: AppTextStyles.bodyLarge),
             ],
           ),
         ),
@@ -323,6 +323,7 @@ class _MobileGallery extends StatelessWidget {
               image: images[i],
               aspectRatio: i == images.length - 1 ? 4 / 5 : 3 / 4,
               borderRadius: BorderRadius.circular(12),
+              isMobile: true,
             ),
           ),
           if (i < images.length - 1) const SizedBox(height: 20),
@@ -337,11 +338,13 @@ class _GalleryCard extends StatefulWidget {
     required this.image,
     this.aspectRatio,
     required this.borderRadius,
+    this.isMobile = false,
   });
 
   final _GalleryImage image;
   final double? aspectRatio;
   final BorderRadius borderRadius;
+  final bool isMobile;
 
   @override
   State<_GalleryCard> createState() => _GalleryCardState();
@@ -375,7 +378,7 @@ class _GalleryCardState extends State<_GalleryCard> {
               duration: const Duration(milliseconds: 500),
               curve: Curves.easeOut,
               child: ColorFiltered(
-                colorFilter: _hovered
+                colorFilter: _hovered || widget.isMobile
                     ? const ColorFilter.mode(Colors.transparent, BlendMode.dst)
                     : const ColorFilter.matrix(<double>[
                         0.2126,
