@@ -123,10 +123,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationSubtitle => 'The Capital City';
 
   @override
-  String get venueGuestHouse => 'The Guest House';
+  String get venueGuestHouse => '​Tumar Banquet Hall';
 
   @override
-  String get venueMainBallroom => 'Main Ballroom';
+  String get venueMainBallroom => 'Zheltoksan Street, 2t';
 
   @override
   String get addToCalendar => 'Add to Calendar';
@@ -135,7 +135,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gettingThere => 'Getting There';
 
   @override
-  String get gettingThereDesc => 'The Guest House is located in the heart of Astana. Valet parking will be complimentary.';
+  String get gettingThereDesc => 'The Guest House is located in the heart of Astana.';
 
   @override
   String get venue => 'Venue';

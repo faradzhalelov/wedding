@@ -123,10 +123,10 @@ class AppLocalizationsKk extends AppLocalizations {
   String get locationSubtitle => 'Астана қаласы';
 
   @override
-  String get venueGuestHouse => 'Қонақ үй';
+  String get venueGuestHouse => '​Банкетный зал Tumar';
 
   @override
-  String get venueMainBallroom => 'Негізгі банкет залы';
+  String get venueMainBallroom => 'Улица Желтоксан, 2т';
 
   @override
   String get addToCalendar => 'Күнтізбеге қосу';
@@ -135,7 +135,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get gettingThere => 'Жету жолы';
 
   @override
-  String get gettingThereDesc => 'Қонақ үй Астананың орталығында орналасқан. Тегін қызмет көрсететін паркинг.';
+  String get gettingThereDesc => 'Қонақ үй Астананың орталығында орналасқан.';
 
   @override
   String get venue => 'Орын';

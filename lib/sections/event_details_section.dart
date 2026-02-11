@@ -116,9 +116,9 @@ class _DateHero extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 32),
-        // Add to calendar button
-        _CalendarButton(),
+        // const SizedBox(height: 32),
+        // // Add to calendar button
+        // _CalendarButton(),
       ],
     );
   }

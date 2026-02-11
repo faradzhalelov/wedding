@@ -328,13 +328,13 @@ abstract class AppLocalizations {
   /// No description provided for @venueGuestHouse.
   ///
   /// In en, this message translates to:
-  /// **'The Guest House'**
+  /// **'​Tumar Banquet Hall'**
   String get venueGuestHouse;
 
   /// No description provided for @venueMainBallroom.
   ///
   /// In en, this message translates to:
-  /// **'Main Ballroom'**
+  /// **'Zheltoksan Street, 2t'**
   String get venueMainBallroom;
 
   /// No description provided for @addToCalendar.
@@ -352,7 +352,7 @@ abstract class AppLocalizations {
   /// No description provided for @gettingThereDesc.
   ///
   /// In en, this message translates to:
-  /// **'The Guest House is located in the heart of Astana. Valet parking will be complimentary.'**
+  /// **'The Guest House is located in the heart of Astana.'**
   String get gettingThereDesc;
 
   /// No description provided for @venue.
