@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../models/guest_data.dart';
+import '../providers/guest_provider.dart';
 import '../theme/app_colors.dart';
 import '../theme/app_text_styles.dart';
 import '../utils/extentions.dart';
+import '../utils/firebase_service.dart';
 import '../widgets/fade_in_on_scroll.dart';
 import '../widgets/responsive_builder.dart';
 
 /// RSVP form section matching form.html design.
-/// Uses plain setState — adding Riverpod/Bloc for a single form
-/// with 5 fields would be over-engineering.
-class RsvpSection extends StatefulWidget {
+/// Uses Riverpod to load guest data from URL.
+class RsvpSection extends ConsumerStatefulWidget {
   const RsvpSection({super.key});
 
   @override
-  State<RsvpSection> createState() => _RsvpSectionState();
+  ConsumerState<RsvpSection> createState() => _RsvpSectionState();
 }
 
-class _RsvpSectionState extends State<RsvpSection> {
+class _RsvpSectionState extends ConsumerState<RsvpSection> {
   final _formKey = GlobalKey<FormState>();
   bool _attending = true;
   int _guestCount = 1;
@@ -24,8 +27,8 @@ class _RsvpSectionState extends State<RsvpSection> {
   final _emailController = TextEditingController();
   final _dietaryController = TextEditingController();
   bool _submitted = false;
-  bool _submitting = false;
-
+  bool _submitting = false;  GuestData? _guestData;
+  String? _guestId;
   @override
   void dispose() {
     _nameController.dispose();
@@ -39,20 +42,54 @@ class _RsvpSectionState extends State<RsvpSection> {
 
     setState(() => _submitting = true);
 
-    // Mock submission — swap with real API call when backend exists.
-    await Future.delayed(const Duration(milliseconds: 1200));
+    try {
+      // Send to Firebase if we have a guestId
+      if (_guestId != null && _guestId!.isNotEmpty) {
+        final service = FirebaseService();
+        await service.sendResponse(
+          docId: _guestId!,
+          attending: _attending,
+          guestsCount: _guestCount,
+        );
+      }
 
-    if (mounted) {
-      setState(() {
-        _submitting = false;
-        _submitted = true;
-      });
+      if (mounted) {
+        setState(() {
+          _submitting = false;
+          _submitted = true;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() => _submitting = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Ошибка отправки: $e')),
+        );
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final isMobile = screenSizeOf(context) == ScreenSize.mobile;
+    final guestDataAsync = ref.watch(guestDataProvider);
+    
+    // Update local state when guest data loads
+    guestDataAsync.whenData((data) {
+      if (data != null && _guestData == null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) {
+            setState(() {
+              _guestData = data;
+              _guestId = data.id;
+              _nameController.text = data.message;
+              _guestCount = data.guestsCount;
+              _attending = data.attending;
+            });
+          }
+        });
+      }
+    });
 
     return Container(
       width: double.infinity,
@@ -102,18 +139,40 @@ class _RsvpSectionState extends State<RsvpSection> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Name field
-                  _FormLabel(l10n.rsvpYourName),
-                  const SizedBox(height: 8),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      hintText: l10n.rsvpEnterFullName,
+                  // Name/Message field
+                  if (_guestData != null) ...[
+                    _FormLabel('Приглашение'),
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryLight.withValues(alpha: 0.3),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: AppColors.primary.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      child: Text(
+                        _nameController.text,
+                        style: AppTextStyles.body.copyWith(
+                          color: AppColors.textPrimary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                     ),
-                    validator: (v) => (v == null || v.trim().isEmpty)
-                        ? l10n.rsvpPleaseEnterName
-                        : null,
-                  ),
+                  ] else ...[
+                    _FormLabel(l10n.rsvpYourName),
+                    const SizedBox(height: 8),
+                    TextFormField(
+                      controller: _nameController,
+                      decoration: InputDecoration(
+                        hintText: l10n.rsvpEnterFullName,
+                      ),
+                      validator: (v) => (v == null || v.trim().isEmpty)
+                          ? l10n.rsvpPleaseEnterName
+                          : null,
+                    ),
+                  ],
                   const SizedBox(height: 28),
                   // Attendance toggle
                   _FormLabel(l10n.rsvpWillAttend),

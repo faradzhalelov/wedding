@@ -46,31 +46,3 @@ Build
 flutter build web --web-renderer html
 
 Добавление из json
-
-import 'dart:convert';
-import 'package:flutter/services.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-
-Future<void> seedGuestsFromJson() async {
-  final firestore = FirebaseFirestore.instance;
-
-  final jsonString = await rootBundle.loadString('assets/doc/guests.json');
-  final Map<String, dynamic> data = json.decode(jsonString);
-
-  final batch = firestore.batch();
-
-  for (final entry in data.entries) {
-    final docId = entry.key;
-    final Map<String, dynamic> guestMap =
-        Map<String, dynamic>.from(entry.value);
-
-    final docRef = firestore.collection('guests').doc(docId);
-
-    batch.set(docRef, {
-      ...guestMap,
-      'createdAt': FieldValue.serverTimestamp(),
-    }, SetOptions(merge: true));
-  }
-
-  await batch.commit();
-}

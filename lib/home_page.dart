@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'sections/navbar.dart';
 import 'sections/hero_section.dart';
@@ -15,14 +16,14 @@ import 'utils/extentions.dart';
 /// Why not GoRouter? There are no routes. Everything is on one page.
 /// Scroll-to-section via GlobalKey is simpler and more reliable for
 /// a single-page wedding invitation.
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends ConsumerState<HomePage> {
   final _scrollController = ScrollController();
 
   // Section keys for scroll targeting
