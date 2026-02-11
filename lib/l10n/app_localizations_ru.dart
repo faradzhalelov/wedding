@@ -36,6 +36,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get colorWhite => 'Белый';
 
   @override
+  String get colorBeige => 'Бежевый';
+
+  @override
+  String get colorNavy => 'Синий';
+
+  @override
+  String get colorBurgundy => 'Бордовый';
+
+  @override
+  String get colorOlive => 'Оливковый';
+
+  @override
   String get colorRed => 'Красный';
 
   @override

@@ -151,6 +151,30 @@ abstract class AppLocalizations {
   /// **'White'**
   String get colorWhite;
 
+  /// No description provided for @colorBeige.
+  ///
+  /// In en, this message translates to:
+  /// **'Beige'**
+  String get colorBeige;
+
+  /// No description provided for @colorNavy.
+  ///
+  /// In en, this message translates to:
+  /// **'Navy'**
+  String get colorNavy;
+
+  /// No description provided for @colorBurgundy.
+  ///
+  /// In en, this message translates to:
+  /// **'Burgundy'**
+  String get colorBurgundy;
+
+  /// No description provided for @colorOlive.
+  ///
+  /// In en, this message translates to:
+  /// **'Olive'**
+  String get colorOlive;
+
   /// No description provided for @colorRed.
   ///
   /// In en, this message translates to:

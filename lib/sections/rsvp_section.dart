@@ -207,14 +207,14 @@ class _RsvpSectionState extends State<RsvpSection> {
                   Container(height: 1, color: AppColors.neutral200),
                   const SizedBox(height: 24),
                   // Deadline note
-                  Text(
-                    l10n.rsvpRespondBy,
-                    style: AppTextStyles.bodySmall.copyWith(
-                      color: AppColors.neutral500,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 16),
+                  // Text(
+                  //   l10n.rsvpRespondBy,
+                  //   style: AppTextStyles.bodySmall.copyWith(
+                  //     color: AppColors.neutral500,
+                  //   ),
+                  //   textAlign: TextAlign.center,
+                  // ),
+                  // const SizedBox(height: 16),
                   // Submit
                   _SubmitButton(
                     context: context,

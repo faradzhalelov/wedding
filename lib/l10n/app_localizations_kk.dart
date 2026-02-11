@@ -36,6 +36,18 @@ class AppLocalizationsKk extends AppLocalizations {
   String get colorWhite => 'Ақ';
 
   @override
+  String get colorBeige => 'Бежевый';
+
+  @override
+  String get colorNavy => 'Көк';
+
+  @override
+  String get colorBurgundy => 'Бордо';
+
+  @override
+  String get colorOlive => 'Зәйтүн';
+
+  @override
   String get colorRed => 'Қызыл';
 
   @override

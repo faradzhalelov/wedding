@@ -159,10 +159,10 @@ class _ColorPalette extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.localization;
     final colors = [
-      (l10n.colorBlack, Colors.black),
-      (l10n.colorGrey, const Color(0xFF6B7280)),
-      (l10n.colorWhite, Colors.white),
-      (l10n.colorRed, AppColors.primary),
+      (l10n.colorBlack, Colors.black, false),
+      (l10n.colorGrey, const Color(0xFF6B7280), false),
+      (l10n.colorWhite, Colors.white, false),
+      ('', AppColors.primary, true), // multicolor indicator
     ];
 
     return Container(
@@ -197,24 +197,26 @@ class _ColorPalette extends StatelessWidget {
               for (int i = 0; i < colors.length; i++) ...[
                 Column(
                   children: [
-                    Container(
-                      width: 48,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: colors[i].$2,
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: AppColors.neutral200,
-                          width: colors[i].$2 == Colors.white ? 1 : 0,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.06),
-                            blurRadius: 4,
+                    colors[i].$3
+                        ? _MultiColorCircle()
+                        : Container(
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              color: colors[i].$2,
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: AppColors.neutral200,
+                                width: colors[i].$2 == Colors.white ? 1 : 0,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.06),
+                                  blurRadius: 4,
+                                ),
+                              ],
+                            ),
                           ),
-                        ],
-                      ),
-                    ),
                     const SizedBox(height: 8),
                     Text(
                       colors[i].$1,
@@ -227,6 +229,38 @@ class _ColorPalette extends StatelessWidget {
                 if (i < colors.length - 1) const SizedBox(width: 20),
               ],
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MultiColorCircle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 48,
+      height: 48,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: const SweepGradient(
+          colors: [
+            Color(0xFFFF0000), // Red
+            Color(0xFFFF7F00), // Orange
+            Color(0xFFFFFF00), // Yellow
+            Color(0xFF00FF00), // Green
+            Color(0xFF0000FF), // Blue
+            Color(0xFF4B0082), // Indigo
+            Color(0xFF9400D3), // Violet
+            Color(0xFFFF0000), // Red again to complete the circle
+          ],
+          stops: [0.0, 0.14, 0.28, 0.42, 0.57, 0.71, 0.85, 1.0],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.06),
+            blurRadius: 4,
           ),
         ],
       ),
