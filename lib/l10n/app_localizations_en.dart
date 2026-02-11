@@ -390,6 +390,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rsvpEventDate => 'Astana  •  June 2026';
 
   @override
+  String get rsvpEditResponse => 'Edit Response';
+
+  @override
   String get navOurStory => 'Our Story';
 
   @override

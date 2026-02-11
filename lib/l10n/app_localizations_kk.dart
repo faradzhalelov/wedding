@@ -390,6 +390,9 @@ class AppLocalizationsKk extends AppLocalizations {
   String get rsvpEventDate => 'Астана  •  Маусым 2026';
 
   @override
+  String get rsvpEditResponse => 'Жауапты өзгерту';
+
+  @override
   String get navOurStory => 'Біздің тарих';
 
   @override

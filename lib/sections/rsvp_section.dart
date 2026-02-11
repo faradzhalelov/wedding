@@ -85,6 +85,8 @@ class _RsvpSectionState extends ConsumerState<RsvpSection> {
               _nameController.text = data.message;
               _guestCount = data.guestsCount;
               _attending = data.attending;
+              // If already responded, show success state
+              _submitted = data.responded;
             });
           }
         });
@@ -102,7 +104,11 @@ class _RsvpSectionState extends ConsumerState<RsvpSection> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: FadeInOnScroll(
               child: _submitted
-                  ? _SuccessState()
+                  ? _SuccessState(onEdit: () {
+                      setState(() {
+                        _submitted = false;
+                      });
+                    })
                   : _buildForm(context, isMobile),
             ),
           ),
@@ -680,6 +686,10 @@ class _SubmitButtonState extends State<_SubmitButton> {
 }
 
 class _SuccessState extends StatelessWidget {
+  const _SuccessState({required this.onEdit});
+  
+  final VoidCallback onEdit;
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.localization;
@@ -738,6 +748,17 @@ class _SuccessState extends StatelessWidget {
                 color: AppColors.primary,
                 fontWeight: FontWeight.w600,
               ),
+            ),
+          ),
+          const SizedBox(height: 32),
+          // Edit response button
+          TextButton.icon(
+            onPressed: onEdit,
+            icon: const Icon(Icons.edit_outlined, size: 18),
+            label: Text(l10n.rsvpEditResponse),
+            style: TextButton.styleFrom(
+              foregroundColor: AppColors.textSecondary,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             ),
           ),
         ],

@@ -390,6 +390,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get rsvpEventDate => 'Астана  •  Июнь 2026';
 
   @override
+  String get rsvpEditResponse => 'Изменить ответ';
+
+  @override
   String get navOurStory => 'Наша история';
 
   @override

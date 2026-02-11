@@ -859,6 +859,12 @@ abstract class AppLocalizations {
   /// **'Astana  •  June 2026'**
   String get rsvpEventDate;
 
+  /// No description provided for @rsvpEditResponse.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Response'**
+  String get rsvpEditResponse;
+
   /// No description provided for @navOurStory.
   ///
   /// In en, this message translates to:
