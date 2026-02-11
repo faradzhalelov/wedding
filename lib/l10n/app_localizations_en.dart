@@ -270,7 +270,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get galleryFarkhat => 'Farkhat';
 
   @override
-  String get galleryFarkhatCaption => 'In the circus';
+  String get galleryFarkhatCaption => 'At home';
 
   @override
   String get galleryFirstDate => 'First Date';

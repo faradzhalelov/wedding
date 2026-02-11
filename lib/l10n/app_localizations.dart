@@ -622,7 +622,7 @@ abstract class AppLocalizations {
   /// No description provided for @galleryFarkhatCaption.
   ///
   /// In en, this message translates to:
-  /// **'In the circus'**
+  /// **'At home'**
   String get galleryFarkhatCaption;
 
   /// No description provided for @galleryFirstDate.

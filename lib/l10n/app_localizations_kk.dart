@@ -270,7 +270,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get galleryFarkhat => 'Фархат';
 
   @override
-  String get galleryFarkhatCaption => 'Циркте';
+  String get galleryFarkhatCaption => 'Үйде';
 
   @override
   String get galleryFirstDate => 'Алғашқы кездесу';
