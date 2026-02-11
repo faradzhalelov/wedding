@@ -20,31 +20,7 @@ class DressCodeSection extends StatelessWidget {
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: isMobile ? 64 : 100),
       child: ContentContainer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Hero heading + palette
-            FadeInOnScroll(child: _DressCodeHero(isMobile: isMobile)),
-            SizedBox(height: isMobile ? 40 : 64),
-            // Guidelines grid
-            FadeInOnScroll(
-              delay: const Duration(milliseconds: 150),
-              child: _GuidelinesGrid(isMobile: isMobile),
-            ),
-            SizedBox(height: isMobile ? 40 : 64),
-            // Inspiration images
-            FadeInOnScroll(
-              delay: const Duration(milliseconds: 250),
-              child: _InspirationGrid(isMobile: isMobile),
-            ),
-            // SizedBox(height: isMobile ? 40 : 64),
-            // // Do's and Don'ts
-            // FadeInOnScroll(
-            //   delay: const Duration(milliseconds: 350),
-            //   child: _DosAndDonts(isMobile: isMobile),
-            // ),
-          ],
-        ),
+        child: FadeInOnScroll(child: _DressCodeHero(isMobile: isMobile)),
       ),
     );
   }
