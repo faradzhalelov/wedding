@@ -22,42 +22,42 @@ class GallerySection extends StatelessWidget {
     final images = [
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuAjCnq0gZ4HdmaI9UzfA91_pQ83B1IctfDiaJfAbS8AEjK5DUhzz4Fn8KbDkq8RS70jmyS-9Qc2Esg66kpVy5cqsOtV1Lbci6udOpphHF7TVEW72Xi37jLI1Zd11DyhBMswzfEv4AbAwGNa5ZUi50cX92YKrlvrPkA6bVd4HuldYyIA8XXcfoCQfBgM47KN9vIOuOj8--W9SPf-P_ky75nBnh2MRnZtLo79jdlw569DHPpBJGxzgR3PorCBRKtOfOgT0as0Dx1QpgU',
+            'assets/webp/riza_young.webp',
         alt: 'Childhood memory - Riza',
         label: l10n.galleryRiza,
         caption: l10n.galleryRizaCaption,
       ),
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuDYF8uqeoxUz-AQKaaIb3KQs4dW1hm35sDMwjHK5nC6pFjv74Bee4IWHF7182PKU5rukyIRWA1o2ljK4Ccjob506TClzz3heyVC0-VyPepfP09HPSWy34eDYpaRipOLlSRluuuHhriCWgQKBrymYL4LxLhrEki-9kR4n1JD7_IG4dZitNebQvmqIKPOp1q5h6-TFY6jSigmr5oeM2iJJE-0DSE-R70igmKKi-d_pP2atvBw84DMZ8i73_AM3DXLkED-k7ifRoSkFKY',
+            'assets/webp/fara_young.webp',
         alt: 'Childhood memory - Farkhat',
         label: l10n.galleryFarkhat,
         caption: l10n.galleryFarkhatCaption,
       ),
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuAiFP3yGXT93UKHCPnWrDlvtShW5tHTOjTdw0EWXhTpmVCIpRDiaB3fK6CqaO2k-_wAQK9ouvvhQ2VUqtmmHh1NSzZxPcdtQiiF0gAKGI2RkL7PzKsq0NkQ5nfeySs5PkGeh9_8Q7GOW2Un8hdcCvsX1cOUo-A2WjK6S4IXHiwzFmdzhaf2_VunccPY_REFF2Yx-2tOZIpH0BPlLxEigN8paUL2vLmYxfXhQ3c8aAG6ZmI1GA1dCmXS7bgerbiu05rnYe_ckwic5bM',
+            'assets/webp/first.webp',
         alt: 'First date at the cafe',
         label: l10n.galleryFirstDate,
         caption: l10n.galleryFirstDateCaption,
       ),
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuAd-hjlqDDfCNhbIP0h6M4wC2bOENmg1jK31ERU08qnu-YhZOymv4UR2x1nrfCbo5eBSzDvQH6Ccv0W7_qzpSZGMhnbpHt1kkMKBSzGddhmt4rx3hTnXCazEwCEqFSB1bKvhG4OphhEjcART-McZbcI4u3bxDxEYBHNa72ZW-T_UHXfBxUcArjIXbQmKofyOO4Vb8oHKs_O5K6ItVJ5O3eAJw4eb5FHYxkjYa1CrYP8OpGYZI4q8CAgW9Bx5l5K8QqWtznVJT2a2Lw',
+            'assets/webp/together_1.webp',
         alt: 'Together',
         label: l10n.galleryTogether,
         caption: l10n.galleryTogetherCaption,
       ),
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuAyc52vjWFmt8veN76nC0VLAbKg3hK-zNSIzsqxVz_DfEidDqc664qvm0a7ZCqQfXv6kOureXzy5TiCipgDwSy4bOzGiP7OBrK5bjnPRAxsj7HdBS3yOkMgZT-jV2UCkPn6xDI_WKEii3iPQfY4CSMTUOSvfLa053yidcG8sloGYZsLIOplnLl-RVNhcUqI9FjuZjB9G2itDLrWFeKOGXDjdnlaFGS5tqi1vfW0cub4gq6jZ5fnhOL0C4Y4mOFe75p8f5J4IgTLJxk',
+            'assets/webp/astana.webp',
         alt: 'Astana cityscape',
         label: l10n.galleryOurCity,
         caption: l10n.galleryOurCityCaption,
       ),
       _GalleryImage(
         url:
-            'https://lh3.googleusercontent.com/aida-public/AB6AXuAGNepL2EkRDoOs7IwXcMzVmAuDbVLW7ylU3ly7JquuUuyhXsN0PYz-vD3i_138qK2YpIDRgyOq0nvQ0OL_7DPOb5hArhe0LueJWNJPmS32MCuw4q6F-g2lUVpMrhnqcaRh9rP7ElV5YRf9O_BqtRnfSiBDig0ANNrhSgYT2qjCM_LssYbDI2TfQk3H_WNidWMODK5gmi5ndGfnLkpaZydMl9N5-RwO0sOQj53CIEiKZtsHU2aMkfk2qVpYom_roxdKDKZ2e-2nFss',
+            'assets/webp/together_2.webp',
         alt: 'The proposal',
         label: l10n.galleryTheYes,
         caption: l10n.galleryTheYesCaption,

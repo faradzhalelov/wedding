@@ -252,19 +252,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get galleryRiza => 'Riza';
 
   @override
-  String get galleryRizaCaption => 'Growing up with dreams bigger than the city skyline.';
+  String get galleryRizaCaption => 'With her favorite toy';
 
   @override
   String get galleryFarkhat => 'Farkhat';
 
   @override
-  String get galleryFarkhatCaption => 'Always exploring, always curious.';
+  String get galleryFarkhatCaption => 'In the circus';
 
   @override
   String get galleryFirstDate => 'First Date';
 
   @override
-  String get galleryFirstDateCaption => 'It started with coffee.';
+  String get galleryFirstDateCaption => 'Sunny Line';
 
   @override
   String get galleryTogether => 'Together';
@@ -285,7 +285,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get galleryTheYesCaption => 'A promise for forever.';
 
   @override
-  String get galleryProposalDate => 'AUGUST 14, 2022';
+  String get galleryProposalDate => '31.01.2026';
 
   @override
   String get heroEyebrow => 'THE WEDDING CELEBRATION';

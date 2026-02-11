@@ -32,7 +32,7 @@ class FooterSection extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            '${l10n.astanaCity} \u2022 2025',
+            '${l10n.astanaCity} \u2022 2026',
             style: AppTextStyles.bodySmall.copyWith(
               letterSpacing: 3,
               color: AppColors.neutral500,

@@ -336,34 +336,34 @@ class _HeroImageState extends State<_HeroImage> {
               ),
             ),
             // Save the date label
-            Positioned(
-              bottom: 20,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(100),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.4),
-                    ),
-                  ),
-                  child: Text(
-                    l10n.heroSaveTheDate,
-                    style: AppTextStyles.body.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Positioned(
+            //   bottom: 20,
+            //   left: 0,
+            //   right: 0,
+            //   child: Center(
+            //     child: Container(
+            //       padding: const EdgeInsets.symmetric(
+            //         horizontal: 20,
+            //         vertical: 10,
+            //       ),
+            //       decoration: BoxDecoration(
+            //         color: Colors.white.withValues(alpha: 0.2),
+            //         borderRadius: BorderRadius.circular(100),
+            //         border: Border.all(
+            //           color: Colors.white.withValues(alpha: 0.4),
+            //         ),
+            //       ),
+            //       child: Text(
+            //         l10n.heroSaveTheDate,
+            //         style: AppTextStyles.body.copyWith(
+            //           color: Colors.white,
+            //           fontWeight: FontWeight.w500,
+            //           letterSpacing: 0.5,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

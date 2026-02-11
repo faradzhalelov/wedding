@@ -586,7 +586,7 @@ abstract class AppLocalizations {
   /// No description provided for @galleryRizaCaption.
   ///
   /// In en, this message translates to:
-  /// **'Growing up with dreams bigger than the city skyline.'**
+  /// **'With her favorite toy'**
   String get galleryRizaCaption;
 
   /// No description provided for @galleryFarkhat.
@@ -598,7 +598,7 @@ abstract class AppLocalizations {
   /// No description provided for @galleryFarkhatCaption.
   ///
   /// In en, this message translates to:
-  /// **'Always exploring, always curious.'**
+  /// **'In the circus'**
   String get galleryFarkhatCaption;
 
   /// No description provided for @galleryFirstDate.
@@ -610,7 +610,7 @@ abstract class AppLocalizations {
   /// No description provided for @galleryFirstDateCaption.
   ///
   /// In en, this message translates to:
-  /// **'It started with coffee.'**
+  /// **'Sunny Line'**
   String get galleryFirstDateCaption;
 
   /// No description provided for @galleryTogether.
@@ -652,7 +652,7 @@ abstract class AppLocalizations {
   /// No description provided for @galleryProposalDate.
   ///
   /// In en, this message translates to:
-  /// **'AUGUST 14, 2022'**
+  /// **'31.01.2026'**
   String get galleryProposalDate;
 
   /// No description provided for @heroEyebrow.
