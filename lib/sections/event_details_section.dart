@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding/utils/extentions.dart';
 
 import '../theme/app_colors.dart';
@@ -283,6 +284,20 @@ class _MapCard extends StatefulWidget {
 class _MapCardState extends State<_MapCard> {
   bool _hovered = false;
 
+  Future<void> _openMap() async {
+    const latitude = 51.161628;
+    const longitude = 71.420281;
+    
+    // Google Maps URL that works on all platforms
+    final url = Uri.parse(
+      'https://www.google.com/maps/search/?api=1&query=$latitude,$longitude'
+    );
+    
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.localization;
@@ -396,35 +411,38 @@ class _MapCardState extends State<_MapCard> {
                     left: 16,
                     right: 16,
                     bottom: 16,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.1),
-                            blurRadius: 12,
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Icon(
-                            Icons.directions,
-                            size: 18,
-                            color: AppColors.textPrimary,
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            l10n.getDirections,
-                            style: AppTextStyles.body.copyWith(
-                              fontWeight: FontWeight.w700,
+                    child: GestureDetector(
+                      onTap: _openMap,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.1),
+                              blurRadius: 12,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.directions,
+                              size: 18,
                               color: AppColors.textPrimary,
                             ),
-                          ),
-                        ],
+                            const SizedBox(width: 8),
+                            Text(
+                              l10n.getDirections,
+                              style: AppTextStyles.body.copyWith(
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.textPrimary,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
