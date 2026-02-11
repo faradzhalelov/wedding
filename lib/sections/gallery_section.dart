@@ -399,7 +399,7 @@ class _GalleryCardState extends State<_GalleryCard> {
                         1,
                         0,
                       ]),
-                child: Image.network(
+                child: Image.asset(
                   widget.image.url,
                   fit: BoxFit.cover,
                   errorBuilder: (_, __, ___) => Container(
@@ -510,7 +510,7 @@ class _ProposalCardState extends State<_ProposalCard> {
               scale: _hovered ? 1.03 : 1.0,
               duration: const Duration(milliseconds: 700),
               curve: Curves.easeOut,
-              child: Image.network(
+              child: Image.asset(
                 widget.image.url,
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) =>

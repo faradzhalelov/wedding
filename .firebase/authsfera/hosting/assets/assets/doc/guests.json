@@ -1,16 +1,254 @@
 {
-  "fara": {
+    "nadiya": {
+      "attending": false,
+      "guestsCount": 1,
+      "message": "Уважаемая Надия",
+      "name": "Надия",
+      "responded": false
+    },
+    "liza" : {
+      "attending": false,
+      "guestsCount": 1,
+      "message": "Уважаемая тётя Лиза",
+      "name": "Лиза",
+      "responded": false
+    },
+  "ruslan_d" : {
     "attending": false,
-    "guestsCount": 1,
-    "message": "Уважаемые Фархат и Риза",
-    "name": "Farkhat",
+    "guestsCount": 2,
+    "message": "Уважаемые Руслан и Анастасия",
+    "name": "Руслан Д.",
     "responded": false
   },
-  "askar": {
+  "darkhan": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые дядя Дархан и тётя Тамара",
+    "name": "Дархан",
+    "responded": false
+  },
+  "demisin": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые дядя Демисин и тётя Халида",
+    "name": "Демисин",
+    "responded": false
+  },
+  "gibadat": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые дядя Гибадат и тётя Люда",
+    "name": "Гибадат",
+    "responded": false
+  },
+  "asylbek": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые дядя Асылбек и тётя Айгуль",
+    "name": "Асылбек",
+    "responded": false
+  },
+  "rinat": {
+    "attending": false,
+    "guestsCount": 3,
+    "message": "Уважаемые дядя Ринат, тётя Жанна и Альбина",
+    "name": "Ринат",
+    "responded": false
+  },
+  "abylkhas": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые дядя Абылхас и тётя Аля",
+    "name": "Абылхас",
+    "responded": false
+  },
+  "aman": {
+    "attending": false,
+    "guestsCount": 4,
+    "message": "Уважаемые дядя Аман, тётя Нелля, Алина и Кайрат",
+    "name": "Аман",
+    "responded": false
+  },
+  "zhenya": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые тётя Женя и Индира",
+    "name": "Женя",
+    "responded": false
+  },
+  "esen": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Эсен и Жаннара",
+    "name": "Эсен",
+    "responded": false
+  },
+  "zhanbulat": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Жанбулат и Аделя",
+    "name": "Жанбулат",
+    "responded": false
+  },
+  "askhat": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Асхат и Румия",
+    "name": "Асхат",
+    "responded": false
+  },
+  "arsen": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Арсен и Альбина",
+    "name": "Арсен",
+    "responded": false
+  },
+  "damir": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Дамир и Алия",
+    "name": "Дамир",
+    "responded": false
+  },
+  "ruslan": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Руслан и Диана",
+    "name": "Руслан",
+    "responded": false
+  },
+  "azamat_saule": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Азамат и Сауле",
+    "name": "Азамат",
+    "responded": false
+  },
+  "azamat": {
     "attending": false,
     "guestsCount": 1,
-    "message": "Уважаемый Аскар",
-    "name": "Askar",
+    "message": "Уважаемый Азамат",
+    "name": "Азамат",
+    "responded": false
+  },
+  "ramazan": {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Рамазан",
+    "name": "Рамазан",
+    "responded": false
+  },
+  "albert": {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Альберт и Динара",
+    "name": "Альберт",
+    "responded": false
+  },
+  "kenzhebek" : {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Кенжебек и Айдана",
+    "name": "Кенжебек",
+    "responded": false
+  },
+  "merei" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Мерей",
+    "name": "Мерей",
+    "responded": false
+  },
+  "nurbol" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Нурбол",
+    "name": "Нурбол",
+    "responded": false
+  },
+  "adelina" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Аделина",
+    "name": "Аделина",
+    "responded": false
+  },
+  "saniya" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Сания Апа",
+    "name": "Сания",
+    "responded": false
+  },
+  "aset" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Асет",
+    "name": "Асет",
+    "responded": false
+  },
+  "shamshi" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Шамши",
+    "name": "Шамши",
+    "responded": false
+  },
+  "gulzhazira" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Гульжазира",
+    "name": "Гульжазира",
+    "responded": false
+  },
+  "aigerim" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Айгерим",
+    "name": "Айгерим",
+    "responded": false
+  },
+  "inkar" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Инкар",
+    "name": "Инкар",
+    "responded": false
+  },
+  "gaukhar" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемая Гаухар",
+    "name": "Гаухар",
+    "responded": false
+  },
+  "ilya" : {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Илья и Настя",
+    "name": "Илья",
+    "responded": false
+  },
+  "fedor" : {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемый Федор",
+    "name": "Федор",
+    "responded": false
+  },
+  "dzhava" : {
+    "attending": false,
+    "guestsCount": 2,
+    "message": "Уважаемые Джаваншир и Гульназ",
+    "name": "Джава",
+    "responded": false
+  },
+  "nariman" : {
+    "attending": false,
+    "guestsCount": 1,
+    "message": "Уважаемый Нариман",
+    "name": "Нариман",
     "responded": false
   }
 }
